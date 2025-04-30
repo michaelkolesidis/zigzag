@@ -56,24 +56,6 @@ export default function Game() {
   const tileIdGenerator = useMemo(() => createIdGenerator(), []);
   const gemIdGenerator = useMemo(() => createIdGenerator(), []);
 
-  useEffect(() => {
-    const handleKeyDown = (e) => {
-      // Toggle sound
-      if (e.code === 'KeyM') {
-        toggleAudio();
-      }
-
-      // Toggle performance panel
-      else if (e.code === 'KeyP') {
-        togglePerformance();
-      }
-    };
-    document.addEventListener('keydown', handleKeyDown);
-    return () => {
-      document.removeEventListener('keydown', handleKeyDown);
-    };
-  }, [toggleAudio, togglePerformance]);
-
   const directions = useMemo(
     () => [
       new THREE.Vector3(0, 0, -1), // - z-axis
