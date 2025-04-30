@@ -24,6 +24,17 @@ export default create(
       // Score
       score: 0,
       addPoints: (points) => set((state) => ({ score: state.score + points })),
+
+      // Best score
+      bestScore: 0,
+      setBestScore: (score) => set({ bestScore: score }),
+      resetBestScore: () => set({ bestScore: 0 }),
+
+      // Games played
+      gamesPlayed: 0,
+      addGamePlayed: () =>
+        set((state) => ({ gamesPlayed: state.gamesPlayed + 1 })),
+      resetGamesPlayed: () => set({ gamesPlayed: 0 }),
     };
   })
 );

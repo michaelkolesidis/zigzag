@@ -11,7 +11,7 @@ import { Perf } from 'r3f-perf';
 
 // Stores
 import useGame from './stores/useGame';
-import useAudio from './stores/useAudio.js';
+import useSound from './stores/useSound.js';
 
 // Constants and utilities
 import {
@@ -49,8 +49,8 @@ export default function Game() {
   const setPhase = useGame((state) => state.setPhase);
   const performance = useGame((state) => state.performance);
   const togglePerformance = useGame((state) => state.togglePerformance);
-  // const audio = useAudio((state) => state.audio);
-  const toggleAudio = useAudio((state) => state.toggleAudio);
+  // const sound = useSound((state) => state.sound);
+  const toggleSound = useSound((state) => state.toggleSound);
 
   // Create ID generators for tiles and gems
   const tileIdGenerator = useMemo(() => createIdGenerator(), []);
@@ -264,9 +264,9 @@ export default function Game() {
         }
       }
 
-      // Toggle audio
+      // Toggle sound
       if (e.type === 'keydown' && e.code === 'KeyM') {
-        toggleAudio();
+        toggleSound();
       }
 
       // Toggle performance panel
@@ -287,7 +287,7 @@ export default function Game() {
     resetGame,
     addPoints,
     setPhase,
-    toggleAudio,
+    toggleSound,
     togglePerformance,
   ]);
 

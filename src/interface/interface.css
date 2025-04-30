@@ -18,6 +18,10 @@
   font-size: 3em;
 }
 
+#intro-data-container {
+  margin-top: 200px;
+}
+
 #intro-screen,
 #gameover-screen {
   position: absolute;
@@ -28,7 +32,7 @@
 }
 
 #settings {
-  background: #ff45ec;
+  background: #f283c0;
   border-radius: 50%;
   padding: 2.5px;
   width: 45px;
@@ -61,24 +65,41 @@ h1 {
   }
 }
 
+/* Game Over */
+#gameover-title {
+  font-size: 2.5em;
+}
+
+.gameover-button {
+  width: 160px;
+  padding: 10px;
+}
+
+#gameover-score-container {
+  width: 200px;
+  padding: 20px;
+}
+
 .gameover-button,
-#score-container {
+#gameover-score-container {
   right: 10px;
   font-size: 3em;
   z-index: 2;
   background: #e0e0e0;
-  width: 250px;
   margin: auto;
-  padding: 20px;
   border-radius: 5px;
   margin-bottom: 20px;
 }
 
-#score-title {
-  font-size: 0.5em;
+.gameover-score-title {
+  font-size: 0.35em;
+}
+
+.gameover-score {
+  font-size: 1.1em;
 }
 
 .gameover-button {
-  font-size: 2em;
+  font-size: 1.5em;
   padding: 20px 40px;
 }

@@ -1,5 +1,8 @@
 # To-Do
 
+- Add best score to store and functionality
+- Add games played to store and functionality
+- Allow button press without game start
 - Reset
 - Add sounds
 - Fix camera movement to appear to move only forward

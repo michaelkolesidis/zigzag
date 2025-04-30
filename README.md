@@ -14,4 +14,4 @@ How far can you make it?
 
 ## Other
 
-Copyright (c) 2023 Michael Kolesidis  
+Copyright (c) Michael Kolesidis  
