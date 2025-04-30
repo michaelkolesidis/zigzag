@@ -1,0 +1,14 @@
+fuchsia
+#ff45ec
+
+gray
+#e0e0e0
+
+black
+#333333
+
+white
+#ffffff
+
+blue
+#0088cc
