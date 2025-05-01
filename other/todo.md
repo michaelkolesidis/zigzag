@@ -1,5 +1,7 @@
 # To-Do
 
+- Add Tailwind CSS
+- Create manifest and make installable
 - Add best score to store and functionality
 - Add games played to store and functionality
 - Allow button press without game start

@@ -6,6 +6,7 @@ import React, {
   useCallback,
 } from 'react';
 import { useFrame, useThree } from '@react-three/fiber';
+import { Billboard, Text } from '@react-three/drei';
 import * as THREE from 'three';
 import { Perf } from 'r3f-perf';
 
@@ -41,6 +42,11 @@ import createIdGenerator from './utils/idGenerator.js';
 import Tile from './Tile';
 import Gem from './Gem';
 
+// Sound effects
+const tapSound = new Audio('sounds/tap.mp3');
+const fallSound = new Audio('sounds/fall.mp3');
+const gemSound = new Audio('sounds/gem.mp3');
+
 export default function Game() {
   const { camera } = useThree();
 
@@ -49,7 +55,8 @@ export default function Game() {
   const setPhase = useGame((state) => state.setPhase);
   const performance = useGame((state) => state.performance);
   const togglePerformance = useGame((state) => state.togglePerformance);
-  // const sound = useSound((state) => state.sound);
+  const isMobile = useGame((state) => state.isMobile);
+  const sound = useSound((state) => state.sound);
   const toggleSound = useSound((state) => state.toggleSound);
 
   // Create ID generators for tiles and gems
@@ -248,30 +255,45 @@ export default function Game() {
         e.type === 'pointerdown' ||
         (e.type === 'keydown' && (e.code === 'Enter' || e.code === 'Space'))
       ) {
-        if (phase === 'ready') {
-          setPhase('playing');
-          return;
-        }
-        if (phase === 'gameover') {
-          // resetGame();
-          return;
-        }
+        // Playing Phase
         if (phase === 'playing') {
+          document.body.style.cursor = 'none';
+          if (sound) {
+            tapSound.currentTime = 0;
+            tapSound.play();
+          }
           directionIndex.current =
             (directionIndex.current + 1) % directions.length;
           targetDirection.current.copy(directions[directionIndex.current]);
           addPoints(1);
+        } else {
+          // Ready Phase
+          if (phase === 'ready') {
+            document.body.style.cursor = 'auto';
+            if (e.target.alt === 'Settings icon') {
+              return;
+            }
+            setPhase('playing');
+            return;
+          }
+          // Game Over Phase
+          if (phase === 'gameover') {
+            document.body.style.cursor = 'auto';
+            return;
+          }
         }
       }
 
-      // Toggle sound
-      if (e.type === 'keydown' && e.code === 'KeyM') {
-        toggleSound();
-      }
+      if (!isMobile) {
+        // Toggle sound
+        if (e.type === 'keydown' && e.code === 'KeyM') {
+          toggleSound();
+        }
 
-      // Toggle performance panel
-      if (e.type === 'keydown' && e.code === 'KeyP') {
-        togglePerformance();
+        // Toggle performance panel
+        if (e.type === 'keydown' && e.code === 'KeyP') {
+          togglePerformance();
+        }
       }
     };
 
@@ -289,6 +311,8 @@ export default function Game() {
     setPhase,
     toggleSound,
     togglePerformance,
+    isMobile,
+    sound,
   ]);
 
   // Game Loop
@@ -406,16 +430,20 @@ export default function Game() {
         if (gemMesh) {
           // Check if mesh exists (it might be pending removal)
           const gemPos = gemMesh.position;
-          // Simple distance check
+          // Distance check
           if (spherePos.distanceTo(gemPos) < SPHERE_RADIUS + GEM_RADIUS) {
-            addPoints(1); // Add score for collecting a gem
-            gemsToRemove.push(gem.id); // Mark gem for removal
+            if (sound) {
+              gemSound.currentTime = 0;
+              gemSound.play();
+            }
+            addPoints(1); // add score for collecting a gem
+            gemsToRemove.push(gem.id); // mark gem for removal
             // TODO: Add sound effect and +1 text
           }
         }
       });
 
-      // Update gems state after checking collisions (do this before tile interaction)
+      // Update gems state after checking collisions
       if (gemsToRemove.length > 0) {
         setGems((prevGems) =>
           prevGems.filter((gem) => !gemsToRemove.includes(gem.id))
@@ -446,16 +474,16 @@ export default function Game() {
             spherePos.y < meshPos.y + TILE_DEPTH + SPHERE_RADIUS
           ) {
             isOnPlatform = true;
-            currentContactTileId = tile.id; // Store ID of current tile
+            currentContactTileId = tile.id; // store ID of current tile
             // Update last contact time for the tile we are currently on
             tileLastContactTime.current[tile.id] = clock.elapsedTime;
-            break; // Found the supporting tile
+            break; // found the supporting tile
           }
         }
       }
-      currentTileIdRef.current = currentContactTileId; // Update ref for global access
+      currentTileIdRef.current = currentContactTileId; // update ref for global access
 
-      // Check ACTIVE tiles to see if they should start falling (Time-based)
+      // Check ACTIVE tiles to see if they should start falling (time-based)
       tiles.forEach((tile) => {
         if (
           tile.status === TILE_STATUS.ACTIVE &&
@@ -494,6 +522,10 @@ export default function Game() {
 
       // Sphere Fall Detection
       if (!isOnPlatform) {
+        if (sound) {
+          fallSound.currentTime = 0;
+          fallSound.play();
+        }
         setPhase('gameover');
       }
     } else if (phase === 'gameover') {
@@ -532,7 +564,7 @@ export default function Game() {
           gemData={gem}
           gemRef={(el) => {
             if (el) gemMeshRefs.current[gem.id] = el;
-            else delete gemMeshRefs.current[gem.id]; // Handle ref cleanup
+            else delete gemMeshRefs.current[gem.id];
           }}
         />
       ))}

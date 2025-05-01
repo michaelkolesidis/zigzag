@@ -1,9 +1,12 @@
 import useGame from '../stores/useGame';
 import './interface.css';
-// import Settings from '../assets/settings.png';
-import SoundOn from '../assets/sound-on.svg';
-import SoundOff from '../assets/sound-off.svg';
+// import Settings from '../assets/icons/settings.png';
+import SoundOn from '../assets/icons/sound-on.svg';
+import SoundOff from '../assets/icons/sound-off.svg';
 import useSound from '../stores/useSound';
+
+// Sound effects
+const uiSound = new Audio('sounds/ui.mp3');
 
 export default function Interface() {
   const score = useGame((state) => state.score);
@@ -22,7 +25,15 @@ export default function Interface() {
             id="settings"
             src={sound ? SoundOn : SoundOff}
             alt="Settings icon"
-            onClick={toggleSound}
+            onClick={() => {
+              console.log('Settings clicked');
+
+              toggleSound();
+              if (!sound) {
+                uiSound.currentTime = 0;
+                uiSound.play();
+              }
+            }}
           />
           <h1 id="title">ZIGZAG</h1>
           {isMobile ? (
@@ -34,6 +45,7 @@ export default function Interface() {
             <p className="intro-data">BEST SCORE: {bestScore}</p>
             <p className="intro-data">GAMES PLAYED: {gamesPlayed}</p>
           </div>
+          <p id="copyright">© Michael Kolesidis</p>
         </div>
       )}
       {phase === 'playing' && <div id="score">{score}</div>}
@@ -46,7 +58,20 @@ export default function Interface() {
             <p className="gameover-score-title">BEST SCORE</p>
             <p className="gameover-score">{bestScore}</p>
           </div>
-          <div className="gameover-button">RETRY</div>
+          <div
+            className="gameover-button"
+            onClick={() => {
+              if (sound) {
+                uiSound.currentTime = 0;
+                uiSound.play();
+              }
+              setTimeout(() => {
+                window.location.reload();
+              }, 400);
+            }}
+          >
+            RETRY
+          </div>
         </div>
       )}
     </div>
