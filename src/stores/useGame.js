@@ -1,5 +1,6 @@
 import { create } from 'zustand';
 import { subscribeWithSelector } from 'zustand/middleware';
+import { getLocalStorage, setLocalStorage } from './utils';
 
 export default create(
   subscribeWithSelector((set) => {
@@ -26,15 +27,28 @@ export default create(
       addPoints: (points) => set((state) => ({ score: state.score + points })),
 
       // Best score
-      bestScore: 0,
-      setBestScore: (score) => set({ bestScore: score }),
-      resetBestScore: () => set({ bestScore: 0 }),
+      bestScore: getLocalStorage('bestScore') ?? 0,
+      setBestScore: (score) => {
+        set({ bestScore: score });
+        setLocalStorage('bestScore', score);
+      },
+      resetBestScore: () => {
+        set({ bestScore: 0 });
+        setLocalStorage('bestScore', 0);
+      },
 
       // Games played
-      gamesPlayed: 0,
+      gamesPlayed: getLocalStorage('gamesPlayed') ?? 0,
+      setGamesPlayed: (gamesPlayed) => {
+        set({ gamesPlayed });
+        setLocalStorage('gamesPlayed', gamesPlayed);
+      },
       addGamePlayed: () =>
         set((state) => ({ gamesPlayed: state.gamesPlayed + 1 })),
-      resetGamesPlayed: () => set({ gamesPlayed: 0 }),
+      resetGamesPlayed: () => {
+        set({ gamesPlayed: 0 });
+        setLocalStorage('gamesPlayed', 0);
+      },
     };
   })
 );

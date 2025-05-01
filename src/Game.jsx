@@ -444,7 +444,6 @@ export default function Game() {
             }
             addPoints(1); // add score for collecting a gem
             gemsToRemove.push(gem.id); // mark gem for removal
-            // TODO: Add sound effect and +1 text
           }
         }
       });
