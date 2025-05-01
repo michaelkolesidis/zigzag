@@ -46,6 +46,8 @@ import Gem from './Gem';
 const tapSound = new Audio('sounds/tap.mp3');
 const fallSound = new Audio('sounds/fall.mp3');
 const gemSound = new Audio('sounds/gem.mp3');
+const uiSound = new Audio('sounds/ui.mp3');
+uiSound.volume = 0.75;
 
 export default function Game() {
   const { camera } = useThree();
@@ -272,6 +274,10 @@ export default function Game() {
             document.body.style.cursor = 'auto';
             if (e.target.alt === 'Settings icon') {
               return;
+            }
+            if (sound) {
+              uiSound.currentTime = 0;
+              uiSound.play();
             }
             setPhase('playing');
             return;

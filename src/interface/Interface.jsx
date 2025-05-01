@@ -7,6 +7,7 @@ import useSound from '../stores/useSound';
 
 // Sound effects
 const uiSound = new Audio('sounds/ui.mp3');
+uiSound.volume = 0.75;
 
 export default function Interface() {
   const score = useGame((state) => state.score);
