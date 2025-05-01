@@ -4,6 +4,8 @@
     "name": "Michael Kolesidis",
     "email": "michael.kolesidis@gmail.com"
   },
+  "license": "AGPL-3.0-or-later",
+  "description": "A 3D zigzag game built with React Three Fiber and Vite.",
   "private": true,
   "version": "0.0.0",
   "type": "module",

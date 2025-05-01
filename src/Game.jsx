@@ -6,7 +6,7 @@ import React, {
   useCallback,
 } from 'react';
 import { useFrame, useThree } from '@react-three/fiber';
-import { Billboard, Text } from '@react-three/drei';
+// import { Billboard, Text } from '@react-three/drei';
 import * as THREE from 'three';
 import { Perf } from 'r3f-perf';
 

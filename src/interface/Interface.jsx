@@ -46,7 +46,10 @@ export default function Interface() {
             <p className="intro-data">BEST SCORE: {bestScore}</p>
             <p className="intro-data">GAMES PLAYED: {gamesPlayed}</p>
           </div>
-          <p id="copyright">© Michael Kolesidis</p>
+          <div id="copyright">
+            <p>© Michael Kolesidis</p>
+            <p>Licensed under the AGPL-3.0-or-later</p>
+          </div>
         </div>
       )}
       {phase === 'playing' && <div id="score">{score}</div>}
