@@ -421,7 +421,7 @@ export default function Game() {
       // Camera Movement (only if sphere not falling)
       if (spherePos.y > OBJECT_REMOVAL_POSITION_Y) {
         camera.position.x = -CAMERA_OFFSET_X;
-        camera.position.y = camera.position.y + (speed.current / 2.01) * delta;
+        camera.position.y = camera.position.y + (speed.current / 2.012) * delta; // TODO: elimate magic number, follow sphere world y position
         camera.position.z = CAMERA_OFFSET_Z;
       }
 

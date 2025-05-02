@@ -4,19 +4,16 @@
 - Create manifest and make installable
 - Add best score to store and functionality
 - Add games played to store and functionality
-- Allow button press without game start
 - Reset
-- Add sounds
-- Fix camera movement to appear to move only forward
 - Light that follows the ball
 - Lights changes color periodically (every 50 points)
 - Create icon
+- Camera movement to be aligned with sphere world y
 
 ## To Improve
 
 - Intro screen
 - Game over screen with score
-- Limit level creation divergion
 
 ## Done
 
@@ -26,3 +23,7 @@
 - Make squares and gems opies of the same geometry and material
 - Make gems that were not collected fall with their tiles
 - Add Inter font
+- Add sounds
+- Limit level creation divergion
+- Fix camera movement to appear to move only forward
+- Allow button press without triggerting game start
