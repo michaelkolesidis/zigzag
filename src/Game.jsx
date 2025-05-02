@@ -35,7 +35,7 @@ import {
   GRAVITY,
   CAMERA_OFFSET_X,
   CAMERA_OFFSET_Y,
-  CAMERA_OFFSET_XZ,
+  CAMERA_OFFSET_Z,
 } from './constants/constants.js';
 import createIdGenerator from './utils/idGenerator.js';
 
@@ -49,8 +49,6 @@ const fallSound = new Audio('sounds/fall.mp3');
 const gemSound = new Audio('sounds/gem.mp3');
 const uiSound = new Audio('sounds/ui.mp3');
 uiSound.volume = 0.75;
-
-const extra = 3.25;
 
 export default function Game() {
   const { camera } = useThree();
@@ -143,10 +141,10 @@ export default function Game() {
     camera.position.set(
       spherePos.x - CAMERA_OFFSET_X,
       spherePos.y + CAMERA_OFFSET_Y,
-      spherePos.z + CAMERA_OFFSET_XZ
+      spherePos.z + CAMERA_OFFSET_Z
     );
     camera.lookAt(
-      new THREE.Vector3(-(CAMERA_OFFSET_X - CAMERA_OFFSET_XZ), 0, 0)
+      new THREE.Vector3(-(CAMERA_OFFSET_X - CAMERA_OFFSET_Z), 0, 0)
     );
   }, [camera]);
 
@@ -423,8 +421,8 @@ export default function Game() {
       // Camera Movement (only if sphere not falling)
       if (spherePos.y > OBJECT_REMOVAL_POSITION_Y) {
         camera.position.x = -CAMERA_OFFSET_X;
-        camera.position.y = camera.position.y + (speed.current / 1.96) * delta;
-        camera.position.z = CAMERA_OFFSET_XZ;
+        camera.position.y = camera.position.y + (speed.current / 2.01) * delta;
+        camera.position.z = CAMERA_OFFSET_Z;
       }
 
       // Level Generation

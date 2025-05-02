@@ -31,5 +31,5 @@ export const GRAVITY = 16;
 
 // Camera
 export const CAMERA_OFFSET_X = 18.25;
-export const CAMERA_OFFSET_Y = 15; // TODO: 12 after fixing camera y position
-export const CAMERA_OFFSET_XZ = 15;
+export const CAMERA_OFFSET_Y = 14.66; // TODO: 12 after fixing camera y position
+export const CAMERA_OFFSET_Z = 15;
