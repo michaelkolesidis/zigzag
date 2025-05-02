@@ -20,7 +20,7 @@ export const INITIAL_SPEED = 6;
 export const SPEED_INCREMENT = 0.0125;
 
 // Gems
-export const GEM_RADIUS = 0.375;
+export const GEM_RADIUS = 0.35;
 export const GEM_HEIGHT = GEM_RADIUS * 1.5;
 export const GEM_SPAWN_PROBABILITY = 0.2; // chance for a gem to spawn on a new tile
 export const GEM_HEIGHT_OFFSET = TILE_DEPTH / 2 + GEM_HEIGHT; // place gem centered on top of tile
@@ -30,6 +30,6 @@ export const GEM_COLOR = '#ff69b4';
 export const GRAVITY = 16;
 
 // Camera
-export const CAMERA_OFFSET_X = 18.25;
+export const CAMERA_OFFSET_X = 19.05;
 export const CAMERA_OFFSET_Y = 14.66; // TODO: 12 after fixing camera y position
 export const CAMERA_OFFSET_Z = 15;
