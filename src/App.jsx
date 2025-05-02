@@ -12,10 +12,7 @@ export default function App() {
   return (
     <>
       <Interface />
-      <Canvas
-        orthographic
-        camera={{ zoom: isMobile ? 25 : 50, position: [0, 0, 0] }}
-      >
+      <Canvas orthographic camera={{ zoom: isMobile ? 35 : 70 }}>
         <Game />
       </Canvas>
     </>

@@ -33,8 +33,9 @@ import {
   GEM_SPAWN_PROBABILITY,
   GEM_HEIGHT_OFFSET,
   GRAVITY,
+  CAMERA_OFFSET_X,
   CAMERA_OFFSET_Y,
-  CAMERA_OFFSET_XZ,
+  CAMERA_OFFSET_Z,
 } from './constants/constants.js';
 import createIdGenerator from './utils/idGenerator.js';
 
@@ -136,12 +137,15 @@ export default function Game() {
     if (!sphere.current) return;
     const spherePos = sphere.current.position;
 
+    // Initial camera position
     camera.position.set(
-      spherePos.x - CAMERA_OFFSET_XZ,
+      spherePos.x - CAMERA_OFFSET_X,
       spherePos.y + CAMERA_OFFSET_Y,
-      spherePos.z + CAMERA_OFFSET_XZ
+      spherePos.z + CAMERA_OFFSET_Z
     );
-    camera.lookAt(spherePos);
+    camera.lookAt(
+      new THREE.Vector3(-(CAMERA_OFFSET_X - CAMERA_OFFSET_Z), 0, 0)
+    );
   }, [camera]);
 
   let divergenceX = useRef(0);
@@ -414,12 +418,11 @@ export default function Game() {
       velocity.current.copy(moveDelta.clone().divideScalar(delta));
       speed.current += SPEED_INCREMENT * delta;
 
-      // Camera Movement only if sphere is not falling
+      // Camera Movement (only if sphere not falling)
       if (spherePos.y > OBJECT_REMOVAL_POSITION_Y) {
-        camera.position.x = spherePos.x - CAMERA_OFFSET_XZ;
-        camera.position.y = spherePos.y + CAMERA_OFFSET_Y;
-        camera.position.z = spherePos.z + CAMERA_OFFSET_XZ;
-        camera.lookAt(spherePos);
+        camera.position.x = -CAMERA_OFFSET_X;
+        camera.position.y = camera.position.y + (speed.current / 2.012) * delta; // TODO: elimate magic number, follow sphere world y position
+        camera.position.z = CAMERA_OFFSET_Z;
       }
 
       // Level Generation

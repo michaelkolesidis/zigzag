@@ -2,7 +2,7 @@
 
 ![Screenshot](./screenshots/screenshot.png)
 
-A 3D zigzag game built with React Three Fiber.
+A 3D ZigZag game built with React Three Fiber.
 
 Stay on the wall and zigzag as far as you can!
 Just tap the screen to change the ball’s direction.  
