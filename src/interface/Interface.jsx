@@ -1,5 +1,5 @@
 import useGame from '../stores/useGame';
-import './interface.css';
+import '../styles/interface.css';
 // import Settings from '../assets/icons/settings.png';
 import SoundOn from '../assets/icons/sound-on.svg';
 import SoundOff from '../assets/icons/sound-off.svg';

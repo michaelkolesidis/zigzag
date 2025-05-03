@@ -1,6 +1,7 @@
 import { create } from 'zustand';
 import { subscribeWithSelector } from 'zustand/middleware';
 import { getLocalStorage, setLocalStorage } from './utils';
+import * as THREE from 'three';
 
 export default create(
   subscribeWithSelector((set) => {
@@ -21,6 +22,40 @@ export default create(
       // Phases
       phase: 'ready', // ready, playing, gameover
       setPhase: (phase) => set({ phase }),
+
+      // Directions
+      directions: [
+        new THREE.Vector3(0, 0, -1), // - z-axis
+        new THREE.Vector3(1, 0, 0), // + x-axis
+      ],
+
+      // Sphere position
+      spherePos: new THREE.Vector3(0, 0, 0),
+      setSpherePos: (pos) => set({ spherePos: pos.clone() }),
+
+      // Is sphere on platform
+      isOnPlatform: true,
+      setIsOnPlatform: (isOnPlatform) => set({ isOnPlatform }),
+
+      // Tiles
+      tiles: [],
+      setTiles: (tilesUpdater) =>
+        set((state) => ({
+          tiles:
+            typeof tilesUpdater === 'function'
+              ? tilesUpdater(state.tiles)
+              : tilesUpdater,
+        })),
+
+      // Gems
+      gems: [],
+      setGems: (gemsUpdater) =>
+        set((state) => ({
+          gems:
+            typeof gemsUpdater === 'function'
+              ? gemsUpdater(state.gems)
+              : gemsUpdater,
+        })),
 
       // Score
       score: 0,

@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import { TILE_SIZE, TILE_DEPTH, TILE_COLOR } from './constants/constants.js';
+import { TILE_SIZE, TILE_DEPTH, TILE_COLOR } from '../../constants/constants';
 
 // Geometries and Materials
 const boxGeometry = new THREE.BoxGeometry(TILE_SIZE, TILE_DEPTH, TILE_SIZE);
