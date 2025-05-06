@@ -9,13 +9,18 @@ Just tap the screen to change the ball’s direction.
 One wrong move and you’re off the edge!
 How far can you make it?
 
-## 🛠️ Technologies Used
+## 🛠️ Technologies
 
-- React
-- Three.js
-- React Three Fiber
-- Drei
-- Zustand
+The core technologies of ZigZag are Three.js and React. The following libraries and tools are used:
+
+| Name              | License | Description                                  |
+| ----------------- | :-----: | -------------------------------------------- |
+| React             |   MIT   | Component-based, front-end interface library |
+| Three.js          |   MIT   | 3D graphics API for the web, based on WebGL  |
+| React Three Fiber |   MIT   | A React renderer for Three.js                |
+| Drei              |   MIT   | Useful helpers for React Three Fiber         |
+| Zustand           |   MIT   | State management                             |
+| Vite              |   MIT   | Frontend development tooling                 |
 
 ## 🎮 Overview
 
@@ -25,7 +30,7 @@ The path is endlessly and procedurally generated, forming a jagged zigzag route 
 
 Visually, the game is stripped to its core elements: clean geometric shapes, soft pastel hues, and no clutter — just motion and form. The world feels abstract and ambient, keeping full focus on the gameplay. There are no tutorials, no pause, and no distractions — just the ball, the path, and your reactions.
 
-## 🧩 Core Gameplay Mechanics
+## 🧩 Core Gameplay Mechanics & Features
 
 | **Feature**                      | **Description**                                                                            |
 | -------------------------------- | ------------------------------------------------------------------------------------------ |
@@ -40,7 +45,7 @@ Visually, the game is stripped to its core elements: clean geometric shapes, sof
 | **+1 Floating Text**             | A “+1” text briefly appears and fades out at the gem’s position when collected.            |
 | **Speed Scaling**                | The ball’s speed gradually increases, raising difficulty as you progress.                  |
 | **High Score**                   | The game saves and displays your best score.                                               |
-| **Minimal UI**                   | Clean interface showing score, best score, and audio toggle.                               |
+| **Minimal UI**                   | Clean interface (intro and game over screens) showing score, best score, and audio toggle. |
 | **No Pause**                     | Once gameplay starts, it cannot be paused.                                                 |
 | **Optional Sound**               | Subtle sound effects for turning, collecting gems, and UI interactions.                    |
 | **No Tutorials**                 | The game starts instantly with no instructions — easy to learn by playing.                 |
@@ -48,9 +53,83 @@ Visually, the game is stripped to its core elements: clean geometric shapes, sof
 
 <!-- ## 📸 Screenshots -->
 
+## 🤝 Contributing
+
+Contributions to ZigZag are always welcome and greatly appreciated! Whether you're fixing bugs, adding new features, improving the codebase, or enhancing the documentation, there's always room for improvement. Fork the repository, make your changes, and create a pull request.
+
+_ZigZag_ is in active development, so if you have ideas or want to help, feel free to follow these steps:
+
+1. Start by creating an issue to discuss any proposed changes.
+2. Fork the project.
+3. Create your feature branch: `git checkout -b feature/AmazingFeature`
+4. Commit your changes: `git commit -m 'Add some AmazingFeature'`
+5. Push to your branch: `git push origin feature/AmazingFeature`
+6. Open a pull request to the `develop` branch.
+
+### Submitting Pull Requests
+
+If you've fixed a bug or added a new feature, we encourage you to submit a pull request (PR). When submitting your PR:
+
+- Provide a clear title and description explaining the changes you’ve made.
+- Ensure your code adheres to the project's coding standards and conventions.
+- Test your changes on all supported platforms (e.g., Windows, macOS, Android, iOS).
+- If your PR fixes an issue, include the issue number in the PR description (e.g., "Fixes #123").
+
+We review pull requests regularly and will merge them as soon as possible after ensuring the changes align with the project's goals.
+
+### Reporting Issues
+
+If you encounter any bugs, glitches, or have suggestions for new features, we encourage you to open an issue on the GitHub repository. When submitting an issue, please include as much detail as possible to help us address it quickly. This might include:
+
+- A clear description of the problem or feature request.
+- Steps to reproduce the issue, if applicable.
+- Screenshots or screen recordings to illustrate the issue.
+- Any relevant error messages or logs.
+
+### Code of Conduct
+
+We believe in fostering a respectful, open, and collaborative community. Please engage with others in a positive and helpful manner, as we're all here to improve the project together. Thus, We ask that all contributors adhere to our [Our Contributor Covenant Code of Conduct](./CODE_OF_CONDUCT.md) that promotes respect, inclusivity, and collaboration. Let's keep ZigZag a positive space for everyone!
+
+By contributing to ZigZag, you help improve the project, and we appreciate your time and effort!
+
+## 💻 Sotware Used
+
+The following software tools were utilized in the development of ZigZag:
+
+- Visual Studio Code
+- Google Chrome
+- Inkscape
+- Audacity
+
+## 🧪 Testing
+
+ZigZag has been tested on various platforms, browsers, devices. The aim was to make it playable and optimised to run on virtually any device. It has been tested and it runs smoothly even on a 2018 Honor 8X (Android 10, Kirin 710 (12 nm), Mali-G51 MP4, 4GM RAM ) to ensure it works.
+
+ZigZag has been tested across a wide range of platforms, browsers, and devices to ensure optimal performance and compatibility. The goal was to make the game accessible and run smoothly on virtually any device. Notably, it performs well even on older models, such as the 2018 Honor 8X (Android 10, Kirin 710, Mali-G51 MP4, 4GB RAM), demonstrating its efficiency.
+
+### Tested Browsers
+
+- Google Chrome
+- Vivaldi
+- Chromium
+- Mozilla Firefox
+- GNOME Web
+- Microsoft Edge
+- Safari
+
+### Tested Platforms
+
+- Windows
+- macOS
+- Linux (Ubuntu)
+- Android
+- iOS
+
 ## 📜 License
 
-<a href="https://www.gnu.org/licenses/agpl-3.0.html"><img src="https://upload.wikimedia.org/wikipedia/commons/0/06/AGPLv3_Logo.svg" height="100px" /></a>
+![Attention Free Software](/public/images/attention-free-software-with-text.png)
+
+<a href="./public/images/agplv3.svg"><img src="https://upload.wikimedia.org/wikipedia/commons/0/06/AGPLv3_Logo.svg" height="100px" /></a>
 
 Copyright (c) Michael Kolesidis  
 Licensed under the [GNU Affero General Public License v3.0](https://www.gnu.org/licenses/agpl-3.0.html).
