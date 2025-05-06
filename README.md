@@ -2,16 +2,22 @@
 
 ![Screenshot](./screenshots/screenshot.png)
 
-A 3D ZigZag game built with React Three Fiber.
+A 3D _ZigZag_ game built with React Three Fiber.
 
 Stay on the wall and zigzag as far as you can!
 Just tap the screen to change the ball’s direction.  
 One wrong move and you’re off the edge!
 How far can you make it?
 
+![Attention! Free Software](./public/assets/attention-free-software.png)
+
+This software is free (as in freedom). **If you use any part of this code, you must make your entire project's source code publicly available under the same license.** This applies whether you modify the code or use it as it is in your own project. This ensures that all modifications and derivative works remain free software, so that everyone can benefit. If you are not willing to comply with these terms, you must refrain from using any part of this code.
+
+For full license terms and conditions, you can read the AGPL-3.0 at: [gnu.org/licenses/agpl-3.0.html](https://www.gnu.org/licenses/agpl-3.0.html).
+
 ## 🛠️ Technologies
 
-The core technologies of ZigZag are Three.js and React. The following libraries and tools are used:
+The core technologies of _ZigZag_ are Three.js and React. The following libraries and tools are used:
 
 | Name              | License | Description                                  |
 | ----------------- | :-----: | -------------------------------------------- |
@@ -24,7 +30,7 @@ The core technologies of ZigZag are Three.js and React. The following libraries 
 
 ## 🎮 Overview
 
-ZigZag is a minimalist, abstract endless runner where the player controls a black ball ⚫ rolling along a narrow, zigzagging ↖️↗️ path suspended in midair. With each tap, the ball changes direction by 90°, and the goal is to stay on the path for as long as possible. The challenge lies in tapping the screen at the right moment to prevent the ball from falling off the edges. This simple, one-touch mechanic creates a high-stakes test of timing and precision, as a single misstep sends the ball tumbling off the path, ending the run.
+_ZigZag_ is a minimalist, abstract endless runner where the player controls a black ball ⚫ rolling along a narrow, zigzagging ↖️↗️ path suspended in midair. With each tap, the ball changes direction by 90°, and the goal is to stay on the path for as long as possible. The challenge lies in tapping the screen at the right moment to prevent the ball from falling off the edges. This simple, one-touch mechanic creates a high-stakes test of timing and precision, as a single misstep sends the ball tumbling off the path, ending the run.
 
 The path is endlessly and procedurally generated, forming a jagged zigzag route that demands increasing focus and reflexes as the speed subtly ramps up. Along the way, players can collect purple gems that spawn randomly on tiles, adding an optional layer of reward.
 
@@ -55,9 +61,9 @@ Visually, the game is stripped to its core elements: clean geometric shapes, sof
 
 ## 🤝 Contributing
 
-Contributions to ZigZag are always welcome and greatly appreciated! Whether you're fixing bugs, adding new features, improving the codebase, or enhancing the documentation, there's always room for improvement. Fork the repository, make your changes, and create a pull request.
+Contributions to _ZigZag_ are always welcome and greatly appreciated! Whether you're fixing bugs, adding new features, improving the codebase, or enhancing the documentation, there's always room for improvement. Fork the repository, make your changes, and create a pull request.
 
-_ZigZag_ is in active development, so if you have ideas or want to help, feel free to follow these steps:
+**ZigZag** is in active development, so if you have ideas or want to help, feel free to follow these steps:
 
 1. Start by creating an issue to discuss any proposed changes.
 2. Fork the project.
@@ -88,13 +94,13 @@ If you encounter any bugs, glitches, or have suggestions for new features, we en
 
 ### Code of Conduct
 
-We believe in fostering a respectful, open, and collaborative community. Please engage with others in a positive and helpful manner, as we're all here to improve the project together. Thus, We ask that all contributors adhere to our [Our Contributor Covenant Code of Conduct](./CODE_OF_CONDUCT.md) that promotes respect, inclusivity, and collaboration. Let's keep ZigZag a positive space for everyone!
+We believe in fostering a respectful, open, and collaborative community. Please engage with others in a positive and helpful manner, as we're all here to improve the project together. Thus, We ask that all contributors adhere to our [Our Contributor Covenant Code of Conduct](./CODE_OF_CONDUCT.md) that promotes respect, inclusivity, and collaboration. Let's keep _ZigZag_ a positive space for everyone!
 
-By contributing to ZigZag, you help improve the project, and we appreciate your time and effort!
+By contributing to _ZigZag_, you help improve the project, and we appreciate your time and effort!
 
 ## 💻 Sotware Used
 
-The following software tools were utilized in the development of ZigZag:
+The following software tools were utilized in the development of _ZigZag_:
 
 - Visual Studio Code
 - Google Chrome
@@ -103,9 +109,7 @@ The following software tools were utilized in the development of ZigZag:
 
 ## 🧪 Testing
 
-ZigZag has been tested on various platforms, browsers, devices. The aim was to make it playable and optimised to run on virtually any device. It has been tested and it runs smoothly even on a 2018 Honor 8X (Android 10, Kirin 710 (12 nm), Mali-G51 MP4, 4GM RAM ) to ensure it works.
-
-ZigZag has been tested across a wide range of platforms, browsers, and devices to ensure optimal performance and compatibility. The goal was to make the game accessible and run smoothly on virtually any device. Notably, it performs well even on older models, such as the 2018 Honor 8X (Android 10, Kirin 710, Mali-G51 MP4, 4GB RAM), demonstrating its efficiency.
+_ZigZag_ has been tested across a wide range of platforms, browsers, and devices to ensure optimal performance and compatibility. The goal was to make the game accessible and run smoothly on virtually any device. Notably, it performs well even on older models, such as the 2018 Honor 8X (Android 10, Kirin 710, Mali-G51 MP4, 4GB RAM).
 
 ### Tested Browsers
 
@@ -126,8 +130,6 @@ ZigZag has been tested across a wide range of platforms, browsers, and devices t
 - iOS
 
 ## 📜 License
-
-![Attention Free Software](/public/images/attention-free-software-with-text.png)
 
 <a href="./public/images/agplv3.svg"><img src="https://upload.wikimedia.org/wikipedia/commons/0/06/AGPLv3_Logo.svg" height="100px" /></a>
 
