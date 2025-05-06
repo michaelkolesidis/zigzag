@@ -1,6 +1,6 @@
 # ZigZag
 
-![Screenshot](./screenshots/screenshot.png)
+![Icon](./public/images/icon.png)
 
 A 3D _ZigZag_ game built with React Three Fiber.
 
@@ -9,7 +9,7 @@ Just tap the screen to change the ball’s direction.
 One wrong move and you’re off the edge!
 How far can you make it?
 
-![Attention! Free Software](./public/assets/attention-free-software.png)
+![Attention! Free Software](./public/images/attention-free-software.png)
 
 This software is free (as in freedom). **If you use any part of this code, you must make your entire project's source code publicly available under the same license.** This applies whether you modify the code or use it as it is in your own project. This ensures that all modifications and derivative works remain free software, so that everyone can benefit. If you are not willing to comply with these terms, you must refrain from using any part of this code.
 
@@ -48,7 +48,7 @@ Visually, the game is stripped to its core elements: clean geometric shapes, sof
 | **Camera Follow**                | The camera smoothly follows the ball from a top-down, slightly angled view.                |
 | **Score System**                 | Earn 1 point for each tile successfully crossed.                                           |
 | **Gem Collection**               | Gems appear on random tiles; collecting them adds 1 point to your score.                   |
-| **+1 Floating Text**             | A “+1” text briefly appears and fades out at the gem’s position when collected.            |
+| **Floating Text on Collection**  | A “+1” text briefly appears and fades out at the gem’s position when collected.            |
 | **Speed Scaling**                | The ball’s speed gradually increases, raising difficulty as you progress.                  |
 | **High Score**                   | The game saves and displays your best score.                                               |
 | **Minimal UI**                   | Clean interface (intro and game over screens) showing score, best score, and audio toggle. |
@@ -57,7 +57,9 @@ Visually, the game is stripped to its core elements: clean geometric shapes, sof
 | **No Tutorials**                 | The game starts instantly with no instructions — easy to learn by playing.                 |
 | **Playable on Mobile & Desktop** | Optimized for both touchscreens and mouse clicks — works on all devices.                   |
 
-<!-- ## 📸 Screenshots -->
+## 📸 Screenshots
+
+![Screenshot](./screenshots/screenshot.png)
 
 ## 🤝 Contributing
 

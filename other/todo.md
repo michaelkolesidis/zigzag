@@ -9,11 +9,12 @@
 - Create icon
 - Camera movement to be aligned with sphere world y
 - Disable gem collection while falling
+- Intro screen & game over screen elements animation
 
 ## To Improve
 
-- Intro screen
-- Game over screen with score
+- Intro screen styling
+- Game over screen with score styling
 
 ## Done
 
