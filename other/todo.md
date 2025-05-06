@@ -2,13 +2,18 @@
 
 - Add Tailwind CSS
 - Create manifest and make installable
-- Add best score to store and functionality
-- Add games played to store and functionality
+- Add web worker for playing offline
 - Light that follows the ball
 - Lights changes color periodically (every 50 points)
 - Create icon
 - Camera movement to be aligned with sphere world y
 - Intro screen & game over screen elements animation
+- Add sphere and gem shadow
+
+## To Consider
+
+- Change sphere from SphereGeometry to CircleGeometry for performance and to apply skins
+- Sphere skins unlockable with gems
 
 ## To Improve
 
@@ -30,3 +35,5 @@
 - Reset
 - +1 text when collecting a gem
 - Disable gem collection while falling
+- Add best score to store and functionality
+- Add games played to store and functionality
