@@ -42,6 +42,7 @@ export default function Game() {
   const isMobile = useGame((state) => state.isMobile);
   const sound = useSound((state) => state.sound);
   const toggleSound = useSound((state) => state.toggleSound);
+  const spherePos = useGame((state) => state.spherePos);
   const setSpherePos = useGame((state) => state.setSpherePos);
   const isOnPlatform = useGame((state) => state.isOnPlatform);
   const setIsOnPlatform = useGame((state) => state.setIsOnPlatform);
@@ -171,7 +172,7 @@ export default function Game() {
   ]);
 
   // Game Loop
-  useFrame((state, delta) => {
+  useFrame((_, delta) => {
     if (phase === 'ready') return;
 
     const spherePos = sphere.current?.position;

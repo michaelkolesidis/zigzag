@@ -29,6 +29,7 @@ import createIdGenerator from '../utils/idGenerator.js';
 // Components
 import Tile from './components/Tile.jsx';
 import Gem from './components/Gem.jsx';
+import FloatingText from './components/FloatingText.jsx';
 
 // Sound effects
 const gemSound = new Audio('sounds/gem.mp3');
@@ -47,10 +48,13 @@ export default function Level() {
   const setGems = useGame((state) => state.setGems);
   const spherePos = useGame((state) => state.spherePos);
   const setIsOnPlatform = useGame((state) => state.setIsOnPlatform);
+  const floatingTexts = useGame((state) => state.floatingTexts);
+  const setFloatingTexts = useGame((state) => state.setFloatingTexts);
 
   // Create ID generators for tiles and gems
   const tileIdGenerator = useMemo(() => createIdGenerator(), []);
   const gemIdGenerator = useMemo(() => createIdGenerator(), []);
+  const floatingTextIdGenerator = useMemo(() => createIdGenerator(), []);
 
   // Level generation
   const tileMeshRefs = useRef({});
@@ -164,6 +168,7 @@ export default function Level() {
     targetDirection.current.copy(directions[0]);
     tileIdGenerator.reset();
     gemIdGenerator.reset();
+    floatingTextIdGenerator.reset();
     tileMeshRefs.current = {};
     gemMeshRefs.current = {};
     tileLastContactTime.current = {}; // reset contact times
@@ -183,10 +188,11 @@ export default function Level() {
     generateInitialPlatform,
     generatePathSegment,
     directions,
+    tileIdGenerator,
     gemIdGenerator,
+    floatingTextIdGenerator,
     setGems,
     setTiles,
-    tileIdGenerator,
     setIsOnPlatform,
   ]);
 
@@ -303,6 +309,15 @@ export default function Level() {
             }
             addPoints(1); // add score for collecting a gem
             gemsToRemove.push(gem.id); // mark gem for removal
+
+            const newFloatingText = {
+              id: floatingTextIdGenerator.generate(),
+              position: gemPos.clone(),
+            };
+            setFloatingTexts((prevFloatingTexts) => [
+              ...prevFloatingTexts,
+              newFloatingText,
+            ]);
           }
         }
       });
@@ -411,6 +426,22 @@ export default function Level() {
           }}
         />
       ))}
+
+      {/* Floating Texts */}
+      {floatingTexts.map((text) => (
+        <FloatingText
+          key={text.id}
+          position={text.position}
+          content="+1"
+          onComplete={() => {
+            setFloatingTexts((prev) => prev.filter((t) => t.id !== text.id));
+          }}
+        />
+      ))}
+
+      {/* To avoid screen flash caused by unsupported GPOS table LookupType log */}
+      {/* TODO: Find the cause of the error and fix it */}
+      <FloatingText key="for-error" position={[0, -1, 0]} content="" />
     </>
   );
 }

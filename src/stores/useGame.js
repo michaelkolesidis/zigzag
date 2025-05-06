@@ -1,7 +1,8 @@
 import { create } from 'zustand';
 import { subscribeWithSelector } from 'zustand/middleware';
-import { getLocalStorage, setLocalStorage } from './utils';
 import * as THREE from 'three';
+import { getLocalStorage, setLocalStorage } from './utils';
+import { SPHERE_RADIUS } from '../constants/constants';
 
 export default create(
   subscribeWithSelector((set) => {
@@ -30,7 +31,7 @@ export default create(
       ],
 
       // Sphere position
-      spherePos: new THREE.Vector3(0, 0, 0),
+      spherePos: new THREE.Vector3(0, SPHERE_RADIUS, 0),
       setSpherePos: (pos) => set({ spherePos: pos.clone() }),
 
       // Is shpere on platform?
@@ -55,6 +56,16 @@ export default create(
             typeof gemsUpdater === 'function'
               ? gemsUpdater(state.gems)
               : gemsUpdater,
+        })),
+
+      // Floating texts
+      floatingTexts: [],
+      setFloatingTexts: (updater) =>
+        set((state) => ({
+          floatingTexts:
+            typeof updater === 'function'
+              ? updater(state.floatingTexts)
+              : updater,
         })),
 
       // Score
