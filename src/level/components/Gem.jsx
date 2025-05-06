@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import { GEM_RADIUS, GEM_HEIGHT, GEM_COLOR } from './constants/constants';
+import { GEM_RADIUS, GEM_HEIGHT, GEM_COLOR } from '../../constants/constants';
 
 // Geometries and materials
 const coneGeometry = new THREE.ConeGeometry(GEM_RADIUS, GEM_HEIGHT, 4);

@@ -1,9 +1,8 @@
 import useGame from '../stores/useGame';
-import './interface.css';
-// import Settings from '../assets/icons/settings.png';
+import useSound from '../stores/useSound';
+import '../styles/interface.css';
 import SoundOn from '../assets/icons/sound-on.svg';
 import SoundOff from '../assets/icons/sound-off.svg';
-import useSound from '../stores/useSound';
 
 // Sound effects
 const uiSound = new Audio('sounds/ui.mp3');
@@ -14,6 +13,7 @@ export default function Interface() {
   const bestScore = useGame((state) => state.bestScore);
   const gamesPlayed = useGame((state) => state.gamesPlayed);
   const phase = useGame((state) => state.phase);
+  const setPhase = useGame((state) => state.setPhase);
   const isMobile = useGame((state) => state.isMobile);
   const sound = useSound((state) => state.sound);
   const toggleSound = useSound((state) => state.toggleSound);
@@ -27,8 +27,6 @@ export default function Interface() {
             src={sound ? SoundOn : SoundOff}
             alt="Settings icon"
             onClick={() => {
-              console.log('Settings clicked');
-
               toggleSound();
               if (!sound) {
                 uiSound.currentTime = 0;
@@ -69,9 +67,7 @@ export default function Interface() {
                 uiSound.currentTime = 0;
                 uiSound.play();
               }
-              setTimeout(() => {
-                window.location.reload();
-              }, 400);
+              setPhase('ready');
             }}
           >
             RETRY
