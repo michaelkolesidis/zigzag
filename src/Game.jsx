@@ -214,16 +214,9 @@ export default function Game() {
 
   return (
     <>
-      {/* Sphere */}
       <Sphere ref={sphere} />
-
-      {/* Level */}
       <Level />
-
-      {/* Lights */}
       <Lights />
-
-      {/* Performance Panel */}
       {performance && <Perf position="bottom-left" />}
     </>
   );
