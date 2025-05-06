@@ -47,6 +47,7 @@ export default function Level() {
   const gems = useGame((state) => state.gems);
   const setGems = useGame((state) => state.setGems);
   const spherePos = useGame((state) => state.spherePos);
+  const isOnPlatform = useGame((state) => state.isOnPlatform);
   const setIsOnPlatform = useGame((state) => state.setIsOnPlatform);
   const floatingTexts = useGame((state) => state.floatingTexts);
   const setFloatingTexts = useGame((state) => state.setFloatingTexts);
@@ -302,7 +303,10 @@ export default function Level() {
           // Check if mesh exists (it might be pending removal)
           const gemPos = gemMesh.position;
           // Distance check
-          if (spherePos.distanceTo(gemPos) < SPHERE_RADIUS + GEM_RADIUS) {
+          if (
+            (spherePos.distanceTo(gemPos) < SPHERE_RADIUS + GEM_RADIUS) &
+            isOnPlatform
+          ) {
             if (sound) {
               gemSound.currentTime = 0;
               gemSound.play();

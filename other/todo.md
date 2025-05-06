@@ -8,7 +8,7 @@
 - Lights changes color periodically (every 50 points)
 - Create icon
 - Camera movement to be aligned with sphere world y
-- Disable gem collection while falling
+
 - Intro screen & game over screen elements animation
 
 ## To Improve
@@ -30,3 +30,4 @@
 - Allow button press without triggerting game start
 - Reset
 - +1 text when collecting a gem
+- Disable gem collection while falling
