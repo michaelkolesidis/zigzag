@@ -57,8 +57,24 @@ Visually, the game is stripped to its core elements: clean geometric shapes, sof
 | **No Tutorials**                 | The game starts instantly with no instructions — easy to learn by playing.                  |
 | **Playable on Mobile & Desktop** | Optimized for both touchscreens and mouse clicks — works on all devices.                    |
 | **Performance Monitor**          | Press P to toggle a Three.js performance monitor or add #debug after the URL to keep it on. |
+| **Installable PWA**              | Fully installable as a Progressive Web App for mobile and desktop.                          |
+| **Offline Play**                 | Once installed, the game is fully playable offline via local caching.                       |
 
-<!-- ## 📸 Screenshots -->
+## 📸 Screenshots
+
+## Mobile
+
+![01](/screenshots/01.png)
+
+![02](/screenshots/02.png)
+
+![03](/screenshots/03.png)
+
+### Desktop
+
+![04](/screenshots/04.png)
+
+![05](/screenshots/05.png)
 
 ## 🤝 Contributing
 
