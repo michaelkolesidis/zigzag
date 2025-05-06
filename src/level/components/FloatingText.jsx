@@ -10,14 +10,14 @@ export default function FloatingText({ position, content, onComplete }) {
     lifetime.current += delta;
 
     if (text.current) {
-      text.current.position.y += delta * 0.75;
+      text.current.position.y += delta * 4;
       const material = text.current.material;
       if (material) {
-        material.opacity = material.opacity - delta * 2;
+        material.opacity = material.opacity - delta * 3;
       }
     }
 
-    if (lifetime.current > 0.5 && typeof onComplete === 'function') {
+    if (lifetime.current > 0.75 && typeof onComplete === 'function') {
       onComplete();
     }
   });
@@ -33,7 +33,7 @@ export default function FloatingText({ position, content, onComplete }) {
         anchorY="middle"
         material-toneMapped={false}
         material-transparent
-        material-opacity={1.25}
+        material-opacity={2}
       >
         {content}
       </Text>

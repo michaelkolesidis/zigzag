@@ -8,7 +8,6 @@
 - Lights changes color periodically (every 50 points)
 - Create icon
 - Camera movement to be aligned with sphere world y
-
 - Intro screen & game over screen elements animation
 
 ## To Improve

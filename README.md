@@ -4,9 +4,9 @@
 
 A 3D _ZigZag_ game built with React Three Fiber.
 
-Stay on the wall and zigzag as far as you can!
+Stay on the wall and zigzag as far as you can!  
 Just tap the screen to change the ball’s direction.  
-One wrong move and you’re off the edge!
+One wrong move and you’re off the edge!  
 How far can you make it?
 
 ![Attention! Free Software](./public/images/attention-free-software.png)
@@ -38,24 +38,25 @@ Visually, the game is stripped to its core elements: clean geometric shapes, sof
 
 ## 🧩 Core Gameplay Mechanics & Features
 
-| **Feature**                      | **Description**                                                                            |
-| -------------------------------- | ------------------------------------------------------------------------------------------ |
-| **One-Tap Control**              | Tap the screen (or click) to change the ball’s direction by 90°. No other inputs are used. |
-| **Falling Off**                  | The ball falls off the edge if you mistime a turn — this ends the game.                    |
-| **Zigzag Path**                  | The path is made of square tiles in alternating zigzag directions.                         |
-| **Endless Generation**           | The path is procedurally generated and continues indefinitely.                             |
-| **Tile Falling**                 | Tiles begin to fall after the ball passes them, adding a sense of urgency and dynamism.    |
-| **Camera Follow**                | The camera smoothly follows the ball from a top-down, slightly angled view.                |
-| **Score System**                 | Earn 1 point for each tile successfully crossed.                                           |
-| **Gem Collection**               | Gems appear on random tiles; collecting them adds 1 point to your score.                   |
-| **Floating Text on Collection**  | A “+1” text briefly appears and fades out at the gem’s position when collected.            |
-| **Speed Scaling**                | The ball’s speed gradually increases, raising difficulty as you progress.                  |
-| **High Score**                   | The game saves and displays your best score.                                               |
-| **Minimal UI**                   | Clean interface (intro and game over screens) showing score, best score, and audio toggle. |
-| **No Pause**                     | Once gameplay starts, it cannot be paused.                                                 |
-| **Optional Sound**               | Subtle sound effects for turning, collecting gems, and UI interactions.                    |
-| **No Tutorials**                 | The game starts instantly with no instructions — easy to learn by playing.                 |
-| **Playable on Mobile & Desktop** | Optimized for both touchscreens and mouse clicks — works on all devices.                   |
+| **Feature**                      | **Description**                                                                             |
+| -------------------------------- | ------------------------------------------------------------------------------------------- |
+| **One-Tap Control**              | Tap the screen (or click) to change the ball’s direction by 90°. No other inputs are used.  |
+| **Falling Off**                  | The ball falls off the edge if you mistime a turn — this ends the game.                     |
+| **Zigzag Path**                  | The path is made of square tiles in alternating zigzag directions.                          |
+| **Endless Generation**           | The path is procedurally generated and continues indefinitely.                              |
+| **Tile Falling**                 | Tiles begin to fall after the ball passes them, adding a sense of urgency and dynamism.     |
+| **Camera Follow**                | The camera smoothly follows the ball from a top-down, slightly angled view.                 |
+| **Score System**                 | Earn 1 point for each tile successfully crossed.                                            |
+| **Gem Collection**               | Gems appear on random tiles; collecting them adds 1 point to your score.                    |
+| **Floating Text on Collection**  | A “+1” text briefly appears and fades out at the gem’s position when collected.             |
+| **Speed Scaling**                | The ball’s speed gradually increases, raising difficulty as you progress.                   |
+| **High Score**                   | The game saves and displays your best score.                                                |
+| **Minimal UI**                   | Clean interface (intro and game over screens) showing score, best score, and audio toggle.  |
+| **No Pause**                     | Once gameplay starts, it cannot be paused.                                                  |
+| **Optional Sound**               | Subtle sound effects for turning, collecting gems, and UI interactions.                     |
+| **No Tutorials**                 | The game starts instantly with no instructions — easy to learn by playing.                  |
+| **Playable on Mobile & Desktop** | Optimized for both touchscreens and mouse clicks — works on all devices.                    |
+| **Performance Monitor**          | Press P to toggle a Three.js performance monitor or add #debug after the URL to keep it on. |
 
 <!-- ## 📸 Screenshots -->
 

@@ -108,7 +108,7 @@ export default function Game() {
         (e.type === 'keydown' && (e.code === 'Enter' || e.code === 'Space'))
       ) {
         // Playing Phase
-        if (phase === 'playing') {
+        if (phase === 'playing' && isOnPlatform) {
           // document.body.style.cursor = 'none';
           if (sound) {
             tapSound.currentTime = 0;
