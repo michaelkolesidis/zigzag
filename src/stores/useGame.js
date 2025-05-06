@@ -33,7 +33,7 @@ export default create(
       spherePos: new THREE.Vector3(0, 0, 0),
       setSpherePos: (pos) => set({ spherePos: pos.clone() }),
 
-      // Is sphere on platform
+      // Is shpere on platform?
       isOnPlatform: true,
       setIsOnPlatform: (isOnPlatform) => set({ isOnPlatform }),
 
@@ -60,6 +60,7 @@ export default create(
       // Score
       score: 0,
       addPoints: (points) => set((state) => ({ score: state.score + points })),
+      resetScore: () => set(() => ({ score: 0 })),
 
       // Best score
       bestScore: getLocalStorage('bestScore') ?? 0,

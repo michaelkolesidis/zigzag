@@ -19,15 +19,10 @@ import {
   PLATFORM_TILE_COUNT,
   MAX_DIVERGENCE,
   SPHERE_RADIUS,
-  INITIAL_SPEED,
-  SPEED_INCREMENT,
   GEM_RADIUS,
   GEM_SPAWN_PROBABILITY,
   GEM_HEIGHT_OFFSET,
   GRAVITY,
-  CAMERA_OFFSET_X,
-  CAMERA_OFFSET_Y,
-  CAMERA_OFFSET_Z,
 } from '../constants/constants.js';
 import createIdGenerator from '../utils/idGenerator.js';
 
@@ -175,6 +170,11 @@ export default function Level() {
     currentTileIdRef.current = null; // reset current tile
     setTiles([]);
     setGems([]);
+    setIsOnPlatform(true);
+
+    divergenceX.current = 0;
+    divergenceZ.current = 0;
+
     generateInitialPlatform();
     for (let i = 0; i <= TARGET_LOOKAHEAD_DISTANCE; i++) {
       generatePathSegment();
@@ -187,19 +187,21 @@ export default function Level() {
     setGems,
     setTiles,
     tileIdGenerator,
+    setIsOnPlatform,
   ]);
 
   // Initial Setup
   useEffect(() => {
+    if (phase === 'gameover' || phase === 'playing') return;
     resetLevel();
-  }, [resetLevel]);
+  }, [resetLevel, phase]);
 
   // Game Loop
   useFrame((state, delta) => {
     const { clock } = state;
 
     if (phase === 'ready') {
-      // nothing
+      return;
     }
 
     if (phase === 'playing' || phase === 'gameover') {
@@ -382,16 +384,6 @@ export default function Level() {
         });
       }
     }
-
-    // if (phase === 'gameover') {
-    //   // Reset the game state
-    //   // setTiles([]);
-    //   // setGems([]);
-    //   tileMeshRefs.current = {};
-    //   gemMeshRefs.current = {};
-    //   tileLastContactTime.current = {};
-    //   currentTileIdRef.current = null;
-    // }
   });
 
   return (
