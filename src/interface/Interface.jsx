@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import useGame from '../stores/useGame';
 import useSound from '../stores/useSound';
 import '../styles/interface.css';
@@ -17,6 +18,20 @@ export default function Interface() {
   const isMobile = useGame((state) => state.isMobile);
   const sound = useSound((state) => state.sound);
   const toggleSound = useSound((state) => state.toggleSound);
+
+  const [isNewBest, setIsNewBest] = useState(false);
+
+  useEffect(() => {
+    if (score > bestScore && bestScore > 0 && !isNewBest) {
+      setIsNewBest(true);
+    }
+  }, [score, bestScore]);
+
+  useEffect(() => {
+    if (phase === 'ready') {
+      setIsNewBest(false);
+    }
+  }, [phase]);
 
   return (
     <div id="interface">
@@ -54,11 +69,35 @@ export default function Interface() {
       {phase === 'gameover' && (
         <div id="gameover-screen">
           <h1 id="gameover-title">GAME OVER</h1>
-          <div id="gameover-score-container">
-            <p className="gameover-score-title">SCORE</p>
-            <p className="gameover-score">{score}</p>
-            <p className="gameover-score-title">BEST SCORE</p>
-            <p className="gameover-score">{bestScore}</p>
+          {isNewBest && <p id="new-high-score">NEW HIGH SCORE!</p>}
+          <div
+            id="gameover-score-container"
+            style={isNewBest ? { background: '#f283c0' } : {}}
+          >
+            <p
+              className="gameover-score-title"
+              style={isNewBest ? { color: '#ffffff' } : {}}
+            >
+              SCORE
+            </p>
+            <p
+              className="gameover-score"
+              style={isNewBest ? { color: '#ffffff' } : {}}
+            >
+              {score}
+            </p>
+            <p
+              className="gameover-score-title"
+              style={isNewBest ? { color: '#ffffff' } : {}}
+            >
+              BEST SCORE
+            </p>
+            <p
+              className="gameover-score"
+              style={isNewBest ? { color: '#ffffff' } : {}}
+            >
+              {bestScore}
+            </p>
           </div>
           <div
             className="gameover-button"

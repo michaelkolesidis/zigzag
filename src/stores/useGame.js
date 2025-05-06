@@ -90,8 +90,8 @@ export default create(
         set({ gamesPlayed });
         setLocalStorage('gamesPlayed', gamesPlayed);
       },
-      addGamePlayed: () =>
-        set((state) => ({ gamesPlayed: state.gamesPlayed + 1 })),
+      // addGamePlayed: () =>
+      //   set((state) => ({ gamesPlayed: state.gamesPlayed + 1 })),
       resetGamesPlayed: () => {
         set({ gamesPlayed: 0 });
         setLocalStorage('gamesPlayed', 0);

@@ -82,6 +82,10 @@ h1 {
   font-size: 2.5em;
 }
 
+#new-high-score {
+  margin-bottom: 10px;
+}
+
 #gameover-score-container {
   width: 200px;
   padding: 20px;

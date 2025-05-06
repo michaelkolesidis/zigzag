@@ -42,10 +42,14 @@ export default function Game() {
   const isMobile = useGame((state) => state.isMobile);
   const sound = useSound((state) => state.sound);
   const toggleSound = useSound((state) => state.toggleSound);
-  const spherePos = useGame((state) => state.spherePos);
   const setSpherePos = useGame((state) => state.setSpherePos);
   const isOnPlatform = useGame((state) => state.isOnPlatform);
   const setIsOnPlatform = useGame((state) => state.setIsOnPlatform);
+  const gamesPlayed = useGame((state) => state.gamesPlayed);
+  const setGamesPlayed = useGame((state) => state.setGamesPlayed);
+  const score = useGame((state) => state.score);
+  const bestScore = useGame((state) => state.bestScore);
+  const setBestScore = useGame((state) => state.setBestScore);
 
   // Camera
   const { camera } = useThree();
@@ -109,7 +113,6 @@ export default function Game() {
       ) {
         // Playing Phase
         if (phase === 'playing' && isOnPlatform) {
-          // document.body.style.cursor = 'none';
           if (sound) {
             tapSound.currentTime = 0;
             tapSound.play();
@@ -121,7 +124,6 @@ export default function Game() {
         } else {
           // Ready Phase
           if (phase === 'ready') {
-            // document.body.style.cursor = 'auto';
             if (e.target.alt === 'Settings icon') {
               return;
             }
@@ -130,11 +132,11 @@ export default function Game() {
               uiSound.play();
             }
             setPhase('playing');
+            setGamesPlayed(gamesPlayed + 1);
             return;
           }
           // Game Over Phase
           if (phase === 'gameover') {
-            // document.body.style.cursor = 'auto';
             return;
           }
         }
@@ -198,6 +200,10 @@ export default function Game() {
 
       // Sphere Fall Detection
       if (!isOnPlatform) {
+        if (score > bestScore) {
+          setBestScore(score);
+        }
+
         if (sound) {
           fallSound.currentTime = 0;
           fallSound.play();
