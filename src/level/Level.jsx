@@ -33,8 +33,6 @@ import FloatingText from './components/FloatingText.jsx';
 
 // Sound effects
 const gemSound = new Audio('sounds/gem.mp3');
-const uiSound = new Audio('sounds/ui.mp3');
-uiSound.volume = 0.75;
 
 export default function Level() {
   // Store

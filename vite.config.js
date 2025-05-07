@@ -8,9 +8,6 @@ export default defineConfig({
     react(),
     VitePWA({
       registerType: 'autoUpdate',
-      devOptions: {
-        enabled: true,
-      },
       // cache all the imports
       workbox: {
         globPatterns: ['**/*'],

@@ -26,6 +26,7 @@ The core technologies of _ZigZag_ are Three.js and React. The following librarie
 | React Three Fiber |   MIT   | A React renderer for Three.js                |
 | Drei              |   MIT   | Useful helpers for React Three Fiber         |
 | Zustand           |   MIT   | State management                             |
+| R3F-Perf          |   MIT   | Performance monitoring                       |
 | Vite              |   MIT   | Frontend development tooling                 |
 
 ## 🎮 Overview
