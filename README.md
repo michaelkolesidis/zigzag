@@ -149,7 +149,7 @@ _ZigZag_ has been tested across a wide range of platforms, browsers, and devices
 
 ## 📜 License
 
-<a href="./public/images/agplv3.svg"><img src="https://upload.wikimedia.org/wikipedia/commons/0/06/AGPLv3_Logo.svg" height="100px" /></a>
+<a href="./public/images/agplv3.svg"><img src="public/images/agplv3.svg" height="100px" /></a>
 
 Copyright (c) Michael Kolesidis  
 Licensed under the [GNU Affero General Public License v3.0](https://www.gnu.org/licenses/agpl-3.0.html).
