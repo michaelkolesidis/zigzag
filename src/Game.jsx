@@ -109,7 +109,10 @@ export default function Game() {
       // Gameplay
       if (
         e.type === 'pointerdown' ||
-        (e.type === 'keydown' && (e.code === 'Enter' || e.code === 'Space'))
+        (e.type === 'keydown' &&
+          (e.code === 'Enter' ||
+            e.code === 'ArrowUp' ||
+            e.code === 'ArrowDown'))
       ) {
         // Playing Phase
         if (phase === 'playing' && isOnPlatform) {
@@ -151,6 +154,14 @@ export default function Game() {
         // Toggle performance panel
         if (e.type === 'keydown' && e.code === 'KeyP') {
           togglePerformance();
+        }
+
+        if (
+          e.type === 'keydown' &&
+          e.code === 'Space' &&
+          phase === 'gameover'
+        ) {
+          setPhase('ready');
         }
       }
     };
