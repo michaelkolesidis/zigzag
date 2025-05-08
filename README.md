@@ -53,6 +53,7 @@ Visually, the game is stripped to its core elements: clean geometric shapes, sof
 | **Speed Scaling**                | The ball’s speed gradually increases, raising difficulty as you progress.                   |
 | **High Score**                   | The game saves and displays your best score.                                                |
 | **Minimal UI**                   | Clean interface (intro and game over screens) showing score, best score, and audio toggle.  |
+| **UI Slide Animations**          | Intro and game over screen elements smoothly slide into view with animated transitions.     |
 | **No Pause**                     | Once gameplay starts, it cannot be paused.                                                  |
 | **Optional Sound**               | Subtle sound effects for turning, collecting gems, and UI interactions.                     |
 | **No Tutorials**                 | The game starts instantly with no instructions — easy to learn by playing.                  |

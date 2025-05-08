@@ -10,16 +10,14 @@ const uiSound = new Audio('sounds/ui.mp3');
 uiSound.volume = 0.75;
 
 export default function Interface() {
-  const score = useGame((state) => state.score);
-  const bestScore = useGame((state) => state.bestScore);
-  const gamesPlayed = useGame((state) => state.gamesPlayed);
-  const phase = useGame((state) => state.phase);
-  const setPhase = useGame((state) => state.setPhase);
-  const isMobile = useGame((state) => state.isMobile);
-  const sound = useSound((state) => state.sound);
-  const toggleSound = useSound((state) => state.toggleSound);
+  const { score, bestScore, gamesPlayed, phase, setPhase, isMobile } = useGame(
+    (state) => state
+  );
+  const { sound, toggleSound } = useSound((state) => state);
 
   const [isNewBest, setIsNewBest] = useState(false);
+  const [animateIntro, setAnimateIntro] = useState(false);
+  const [animateGameOver, setAnimateGameOver] = useState(false);
 
   useEffect(() => {
     if (score > bestScore && bestScore > 0 && !isNewBest) {
@@ -30,13 +28,21 @@ export default function Interface() {
   useEffect(() => {
     if (phase === 'ready') {
       setIsNewBest(false);
+      setAnimateIntro(true);
+      setAnimateGameOver(false);
+    } else if (phase === 'playing') {
+      setAnimateIntro(false);
+    } else if (phase === 'gameover') {
+      setAnimateGameOver(true);
     }
   }, [phase]);
+
+  const playPromptText = isMobile ? 'TAP TO PLAY' : 'CLICK TO PLAY';
 
   return (
     <div id="interface">
       {phase === 'ready' && (
-        <div id="intro-screen">
+        <div id="intro-screen" className={`${animateIntro ? 'animate' : ''}`}>
           <img
             id="settings"
             src={sound ? SoundOn : SoundOff}
@@ -49,17 +55,17 @@ export default function Interface() {
               }
             }}
           />
-          <h1 id="title">ZIGZAG</h1>
-          {isMobile ? (
-            <p id="play-prompt">TAP TO PLAY</p>
-          ) : (
-            <p id="play-prompt">CLICK TO PLAY</p>
-          )}
-          <div id="intro-data-container">
+          <h1 id="title" className="slide-item-intro-top">
+            ZIGZAG
+          </h1>
+          <p id="play-prompt" className="slide-item-intro-top">
+            {playPromptText}
+          </p>
+          <div id="intro-data-container" className="slide-item-intro-bottom">
             <p className="intro-data">BEST SCORE: {bestScore}</p>
             <p className="intro-data">GAMES PLAYED: {gamesPlayed}</p>
           </div>
-          <div id="copyright">
+          <div id="copyright" className="slide-item-intro-bottom">
             <p>© Michael Kolesidis</p>
             <p>Licensed under the AGPL-3.0-or-later</p>
           </div>
@@ -68,48 +74,62 @@ export default function Interface() {
       {phase === 'playing' && <div id="score">{score}</div>}
       {phase === 'gameover' && (
         <div id="gameover-screen">
-          <h1 id="gameover-title">GAME OVER</h1>
-          {isNewBest && <p id="new-high-score">NEW HIGH SCORE!</p>}
           <div
-            id="gameover-score-container"
-            style={isNewBest ? { background: '#f283c0' } : {}}
+            className={`gameover-content ${animateGameOver ? 'animate' : ''}`}
           >
-            <p
-              className="gameover-score-title"
-              style={isNewBest ? { color: '#ffffff' } : {}}
+            <h1 id="gameover-title" className="slide-item-gameover">
+              GAME OVER
+            </h1>
+
+            {isNewBest && (
+              <p id="new-high-score" className="slide-item-gameover">
+                NEW HIGH SCORE!
+              </p>
+            )}
+
+            <div
+              id="gameover-score-container"
+              className="slide-item-gameover"
+              style={isNewBest ? { background: '#f283c0' } : {}}
             >
-              SCORE
-            </p>
-            <p
-              className="gameover-score"
-              style={isNewBest ? { color: '#ffffff' } : {}}
+              <p
+                className="gameover-score-title"
+                style={isNewBest ? { color: '#ffffff' } : {}}
+              >
+                SCORE
+              </p>
+              <p
+                className="gameover-score"
+                style={isNewBest ? { color: '#ffffff' } : {}}
+              >
+                {score}
+              </p>
+              <p
+                className="gameover-score-title"
+                style={isNewBest ? { color: '#ffffff' } : {}}
+              >
+                BEST SCORE
+              </p>
+              <p
+                className="gameover-score"
+                style={isNewBest ? { color: '#ffffff' } : {}}
+              >
+                {bestScore}
+              </p>
+            </div>
+
+            <div
+              className="slide-item-gameover gameover-button"
+              onClick={() => {
+                if (sound) {
+                  uiSound.currentTime = 0;
+                  uiSound.play();
+                }
+                setPhase('ready');
+              }}
             >
-              {score}
-            </p>
-            <p
-              className="gameover-score-title"
-              style={isNewBest ? { color: '#ffffff' } : {}}
-            >
-              BEST SCORE
-            </p>
-            <p
-              className="gameover-score"
-              style={isNewBest ? { color: '#ffffff' } : {}}
-            >
-              {bestScore}
-            </p>
-          </div>
-          <div
-            className="gameover-button"
-            onClick={() => {
-              if (sound) {
-                uiSound.currentTime = 0;
-                uiSound.play();
-              }
-              setPhase('ready');
-            }}
-          >
-            RETRY
+              RETRY
+            </div>
           </div>
         </div>
       )}
