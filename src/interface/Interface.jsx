@@ -77,63 +77,67 @@ export default function Interface() {
       {phase === 'playing' && <div id="score">{score}</div>}
 
       {/* Game Over Screen */}
-      <div id="gameover-screen">
-        <div className={`gameover-content ${animateGameOver ? 'animate' : ''}`}>
-          <h1 id="gameover-title" className="slide-item-gameover">
-            GAME OVER
-          </h1>
-
-          {isNewBest && (
-            <p id="new-high-score" className="slide-item-gameover">
-              NEW HIGH SCORE!
-            </p>
-          )}
-
+      {(phase === 'ready' || phase === 'gameover') && (
+        <div id="gameover-screen">
           <div
-            id="gameover-score-container"
-            className="slide-item-gameover"
-            style={isNewBest ? { background: '#f283c0' } : {}}
+            className={`gameover-content ${animateGameOver ? 'animate' : ''}`}
           >
-            <p
-              className="gameover-score-title"
-              style={isNewBest ? { color: '#ffffff' } : {}}
-            >
-              SCORE
-            </p>
-            <p
-              className="gameover-score"
-              style={isNewBest ? { color: '#ffffff' } : {}}
-            >
-              {score}
-            </p>
-            <p
-              className="gameover-score-title"
-              style={isNewBest ? { color: '#ffffff' } : {}}
-            >
-              BEST SCORE
-            </p>
-            <p
-              className="gameover-score"
-              style={isNewBest ? { color: '#ffffff' } : {}}
-            >
-              {bestScore}
-            </p>
-          </div>
+            <h1 id="gameover-title" className="slide-item-gameover">
+              GAME OVER
+            </h1>
 
-          <div
-            className="slide-item-gameover gameover-button"
-            onClick={() => {
-              if (sound) {
-                uiSound.currentTime = 0;
-                uiSound.play();
-              }
-              setPhase('ready');
-            }}
-          >
-            RETRY
+            {isNewBest && (
+              <p id="new-high-score" className="slide-item-gameover">
+                NEW HIGH SCORE!
+              </p>
+            )}
+
+            <div
+              id="gameover-score-container"
+              className="slide-item-gameover"
+              style={isNewBest ? { background: '#f283c0' } : {}}
+            >
+              <p
+                className="gameover-score-title"
+                style={isNewBest ? { color: '#ffffff' } : {}}
+              >
+                SCORE
+              </p>
+              <p
+                className="gameover-score"
+                style={isNewBest ? { color: '#ffffff' } : {}}
+              >
+                {score}
+              </p>
+              <p
+                className="gameover-score-title"
+                style={isNewBest ? { color: '#ffffff' } : {}}
+              >
+                BEST SCORE
+              </p>
+              <p
+                className="gameover-score"
+                style={isNewBest ? { color: '#ffffff' } : {}}
+              >
+                {bestScore}
+              </p>
+            </div>
+
+            <div
+              className="slide-item-gameover gameover-button"
+              onClick={() => {
+                if (sound) {
+                  uiSound.currentTime = 0;
+                  uiSound.play();
+                }
+                setPhase('ready');
+              }}
+            >
+              RETRY
+            </div>
           </div>
         </div>
-      </div>
+      )}
     </div>
   );
 }
