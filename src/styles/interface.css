@@ -32,6 +32,14 @@
   z-index: 2;
 }
 
+#intro-screen {
+  z-index: 3;
+}
+
+#gameover-screen {
+  z-index: 2;
+}
+
 #settings {
   background: #f283c0;
   border-radius: 50%;
