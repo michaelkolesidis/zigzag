@@ -32,24 +32,25 @@ uiSound.volume = 0.75;
 
 export default function Game() {
   // Store
-  const addPoints = useGame((state) => state.addPoints);
-  const resetScore = useGame((state) => state.resetScore);
-  const phase = useGame((state) => state.phase);
-  const setPhase = useGame((state) => state.setPhase);
-  const directions = useGame((state) => state.directions);
-  const performance = useGame((state) => state.performance);
-  const togglePerformance = useGame((state) => state.togglePerformance);
-  const isMobile = useGame((state) => state.isMobile);
-  const sound = useSound((state) => state.sound);
-  const toggleSound = useSound((state) => state.toggleSound);
-  const setSpherePos = useGame((state) => state.setSpherePos);
-  const isOnPlatform = useGame((state) => state.isOnPlatform);
-  const setIsOnPlatform = useGame((state) => state.setIsOnPlatform);
-  const gamesPlayed = useGame((state) => state.gamesPlayed);
-  const setGamesPlayed = useGame((state) => state.setGamesPlayed);
-  const score = useGame((state) => state.score);
-  const bestScore = useGame((state) => state.bestScore);
-  const setBestScore = useGame((state) => state.setBestScore);
+  const {
+    score,
+    bestScore,
+    gamesPlayed,
+    setGamesPlayed,
+    phase,
+    setPhase,
+    addPoints,
+    resetScore,
+    directions,
+    performance,
+    togglePerformance,
+    isMobile,
+    setSpherePos,
+    isOnPlatform,
+    setIsOnPlatform,
+    setBestScore,
+  } = useGame((state) => state);
+  const { sound, toggleSound } = useSound((state) => state);
 
   // Camera
   const { camera } = useThree();
@@ -182,6 +183,9 @@ export default function Game() {
     togglePerformance,
     isMobile,
     sound,
+    gamesPlayed,
+    isOnPlatform,
+    setGamesPlayed,
   ]);
 
   // Game Loop

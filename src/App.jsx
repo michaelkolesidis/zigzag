@@ -6,7 +6,7 @@ import { fancyLog } from './utils/fancyLog';
 import { useEffect } from 'react';
 
 export default function App() {
-  const isMobile = useGame((state) => state.isMobile);
+  const { isMobile } = useGame((state) => state);
 
   useEffect(() => {
     // Prevent right click
