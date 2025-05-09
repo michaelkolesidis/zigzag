@@ -7,7 +7,12 @@ A 3D _ZigZag_ game built with React Three Fiber.
 Stay on the wall and zigzag as far as you can!  
 Just tap the screen to change the ball’s direction.  
 One wrong move and you’re off the edge!  
-How far can you make it?
+How far can you make it?  
+
+**Play Online:**
+
+[https://playzigzag.vercel.app/](https://playzigzag.vercel.app/)  
+[https://playzigzag.netlify.app/](https://playzigzag.netlify.app/)  
 
 ![Attention! Free Software](./public/images/attention-free-software.png)
 
