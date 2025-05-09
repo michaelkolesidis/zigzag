@@ -16,7 +16,7 @@ How far can you make it?
 
 ![Attention! Free Software](./public/images/attention-free-software.png)
 
-This software is free (as in freedom). **If you use any part of this code, you must make your entire project's source code publicly available under the same license.** This applies whether you modify the code or use it as it is in your own project. This ensures that all modifications and derivative works remain free software, so that everyone can benefit. If you are not willing to comply with these terms, you must refrain from using any part of this code.
+This software is free (as in freedom). **If you use any part of this code, your project's source code must also be made publicly available under the same license.** This applies whether you modify the code or use it as it is in your own project. This ensures that all modifications and derivative works remain free software, so that everyone can benefit. If you are not willing to comply with these terms, you must refrain from using any part of this code.
 
 For full license terms and conditions, you can read the AGPL-3.0 at: [gnu.org/licenses/agpl-3.0.html](https://www.gnu.org/licenses/agpl-3.0.html).
 
@@ -24,15 +24,15 @@ For full license terms and conditions, you can read the AGPL-3.0 at: [gnu.org/li
 
 The core technologies of _ZigZag_ are Three.js and React. The following libraries and tools are used:
 
-| Name              | License | Description                                  |
-| ----------------- | :-----: | -------------------------------------------- |
-| React             |   MIT   | Component-based, front-end interface library |
-| Three.js          |   MIT   | 3D graphics API for the web, based on WebGL  |
-| React Three Fiber |   MIT   | A React renderer for Three.js                |
-| Drei              |   MIT   | Useful helpers for React Three Fiber         |
-| Zustand           |   MIT   | State management                             |
-| R3F-Perf          |   MIT   | Performance monitoring                       |
-| Vite              |   MIT   | Frontend development tooling                 |
+| Name              | License | Description                                            |
+| ----------------- | :-----: | ------------------------------------------------------ |
+| React             |   MIT   | A component-based library for building user interfaces |
+| Three.js          |   MIT   | 3D graphics API for the web, based on WebGL            |
+| React Three Fiber |   MIT   | A React renderer for Three.js                          |
+| Drei              |   MIT   | Useful helpers for React Three Fiber                   |
+| Zustand           |   MIT   | State management                                       |
+| R3F-Perf          |   MIT   | Performance monitoring                                 |
+| Vite              |   MIT   | Frontend development tooling                           |
 
 ## 🎮 Overview
 
@@ -44,29 +44,29 @@ Visually, the game is stripped to its core elements: clean geometric shapes, sof
 
 ## 🧩 Core Gameplay Mechanics & Features
 
-| **Feature**                      | **Description**                                                                             |
-| -------------------------------- | ------------------------------------------------------------------------------------------- |
-| **One-Tap Control**              | Tap the screen (or click) to change the ball’s direction by 90°. No other inputs are used.  |
-| **Falling Off**                  | The ball falls off the edge if you mistime a turn — this ends the game.                     |
-| **Zigzag Path**                  | The path is made of square tiles in alternating zigzag directions.                          |
-| **Endless Generation**           | The path is procedurally generated and continues indefinitely.                              |
-| **Tile Falling**                 | Tiles begin to fall after the ball passes them, adding a sense of urgency and dynamism.     |
-| **Camera Follow**                | The camera smoothly follows the ball from a top-down, slightly angled view.                 |
-| **Score System**                 | Earn 1 point for each tile successfully crossed.                                            |
-| **Gem Collection**               | Gems appear on random tiles; collecting them adds 1 point to your score.                    |
-| **Floating Text on Collection**  | A “+1” text briefly appears and fades out at the gem’s position when collected.             |
-| **Speed Scaling**                | The ball’s speed gradually increases, raising difficulty as you progress.                   |
-| **High Score**                   | The game saves and displays your best score.                                                |
-| **Minimal UI**                   | Clean interface (intro and game over screens) showing score, best score, and audio toggle.  |
-| **UI Slide Animations**          | Intro and game over screen elements smoothly slide into view with animated transitions.     |
-| **No Pause**                     | Once gameplay starts, it cannot be paused.                                                  |
-| **Optional Sound**               | Subtle sound effects for turning, collecting gems, and UI interactions.                     |
-| **No Tutorials**                 | The game starts instantly with no instructions — easy to learn by playing.                  |
-| **Playable on Mobile & Desktop** | Optimized for both touchscreens and mouse clicks — works on all devices.                    |
-| **Performance Monitor**          | Press P to toggle a Three.js performance monitor or add #debug after the URL to keep it on. |
-| **Installable PWA**              | Fully installable as a Progressive Web App for mobile and desktop.                          |
-| **Offline Play**                 | Once installed, the game is fully playable offline via local caching.                       |
-| **Keyboard Support**             | Game can be played using the keyboard, Enter/Arrow Up/Arrow Down to turn, Space to reset    |
+| **Feature**                      | **Description**                                                                                     |
+| -------------------------------- | --------------------------------------------------------------------------------------------------- |
+| **One-Tap Control**              | Tap the screen (or click) to change the ball’s direction by 90°. No other inputs are used.          |
+| **Falling Off**                  | The ball falls off the edge if you mistime a turn — this ends the game.                             |
+| **Zigzag Path**                  | The path is made of square tiles in alternating zigzag directions.                                  |
+| **Endless Generation**           | The path is procedurally generated and continues indefinitely.                                      |
+| **Tile Falling**                 | Tiles begin to fall after the ball passes them, adding a sense of urgency and dynamism.             |
+| **Camera Follow**                | The camera smoothly follows the ball from a top-down, slightly angled view.                         |
+| **Score System**                 | Earn 1 point for each tile successfully crossed.                                                    |
+| **Gem Collection**               | Gems appear on random tiles; collecting them adds 1 point to your score.                            |
+| **Floating Text on Collection**  | A “+1” text briefly appears and fades out at the gem’s position when collected.                     |
+| **Speed Scaling**                | The ball’s speed gradually increases, raising difficulty as you progress.                           |
+| **High Score**                   | The game saves and displays your best score.                                                        |
+| **Minimal UI**                   | Clean interface (intro and game over screens) showing current score, high score, and audio toggle.  |
+| **UI Slide Animations**          | Intro and game over screen elements smoothly slide into view with animated transitions.             |
+| **No Pause**                     | Once gameplay starts, it cannot be paused.                                                          |
+| **Optional Sound**               | Subtle sound effects for turning, collecting gems, and UI interactions.                             |
+| **No Tutorials**                 | The game starts instantly with no instructions — easy to learn by playing.                          |
+| **Playable on Mobile & Desktop** | Optimized for both touchscreens and mouse clicks — works on all devices.                            |
+| **Performance Monitor**          | Press P to toggle a Three.js performance monitor or add #debug after the URL to keep it on.         |
+| **Installable PWA**              | Fully installable as a Progressive Web App for mobile and desktop.                                  |
+| **Offline Play**                 | Once installed, the game is fully playable offline via local caching.                               |
+| **Keyboard Support**             | Game can be played using the keyboard, Enter/Arrow Up/Arrow Down to turn, Space to reset            |
 
 ## 📸 Screenshots
 
@@ -90,7 +90,7 @@ Contributions to _ZigZag_ are always welcome and greatly appreciated! Whether yo
 
 **ZigZag** is in active development, so if you have ideas or want to help, feel free to follow these steps:
 
-1. Start by creating an issue to discuss any proposed changes.
+1. We recommend starting by creating an issue to discuss any proposed changes.
 2. Fork the project.
 3. Create your feature branch: `git checkout -b feature/AmazingFeature`
 4. Commit your changes: `git commit -m 'Add some AmazingFeature'`
@@ -119,11 +119,11 @@ If you encounter any bugs, glitches, or have suggestions for new features, we en
 
 ### Code of Conduct
 
-We believe in fostering a respectful, open, and collaborative community. Please engage with others in a positive and helpful manner, as we're all here to improve the project together. Thus, We ask that all contributors adhere to our [Our Contributor Covenant Code of Conduct](./CODE_OF_CONDUCT.md) that promotes respect, inclusivity, and collaboration. Let's keep _ZigZag_ a positive space for everyone!
+We believe in fostering a respectful, open, and collaborative community. Please engage with others in a positive and helpful manner, as we're all here to improve the project together. Thus, we ask that all contributors adhere to our [Contributor Covenant Code of Conduct](./CODE_OF_CONDUCT.md) that promotes respect, inclusivity, and collaboration. Let's keep _ZigZag_ a positive space for everyone!
 
 By contributing to _ZigZag_, you help improve the project, and we appreciate your time and effort!
 
-## 💻 Sotware Used
+## 💻 Software Used
 
 The following software tools were utilized in the development of _ZigZag_:
 
@@ -156,7 +156,7 @@ _ZigZag_ has been tested across a wide range of platforms, browsers, and devices
 
 ## 📜 License
 
-<a href="./public/images/agplv3.svg"><img src="public/images/agplv3.svg" height="100px" /></a>
+![GNU Affero General Public License v3.0 Logo](/public/images/agplv3-200px.png)
 
 Copyright (c) Michael Kolesidis  
 Licensed under the [GNU Affero General Public License v3.0](https://www.gnu.org/licenses/agpl-3.0.html).

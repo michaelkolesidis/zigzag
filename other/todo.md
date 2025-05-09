@@ -1,39 +1,44 @@
-# To-Do
+# 🚧 To-Do
 
-- Add Tailwind CSS
-- Create manifest and make installable
-- Add web worker for playing offline
-- Light that follows the ball
-- Lights changes color periodically (every 50 points)
-- Create icon
-- Camera movement to be aligned with sphere world y
-- Intro screen & game over screen elements animation
-- Add sphere and gem shadow
+- Add a dynamic light that follows the ball  
+- Make the light change color periodically (e.g., every 50 points)  
+- Align camera movement with the ball's world Y position  
+- Add shadows for the ball and gems  
+- Improve the app icon  
 
-## To Consider
+## 💡 Under Consideration
 
-- Change sphere from SphereGeometry to CircleGeometry for performance and to apply skins
-- Sphere skins unlockable with gems
+- Replace `SphereGeometry` with `CircleGeometry` for better performance and easier skinning  
+- Introduce unlockable ball skins using collected gems  
+- Add an in-game settings menu (audio, graphics, difficulty toggle)
+- Add shareable scorecard or screenshot (for sharing to social media)
+Include a dev mode to toggle unlimited lives or test gem spawning
+- Add haptic feedback for mobile (e.g. light tap when turning or collecting a gem) [Vibration API](https://developer.mozilla.org/en-US/docs/Web/API/Vibration_API)
 
-## To Improve
+## ✅ Completed
 
-- Intro screen styling
-- Game over screen with score styling
+- Implement point system: +1 per turn, +1 per gem collected  
+- Randomly spawn gems on path tiles  
+- Level generation system  
+- Reuse geometry and material for both tiles and gems  
+- Make uncollected gems fall with disappearing tiles  
+- Add Inter font  
+- Add sound effects  
+- Limit excessive divergence in path generation  
+- Fix camera movement to appear forward-only  
+- Allow UI button interactions without triggering game start  
+- Implement full reset functionality  
+- Display floating “+1” text when collecting gems  
+- Prevent gem collection while falling  
+- Store and display best score  
+- Track number of games played  
+- Style game over screen with score display  
+- Style intro screen  
+- Add slide-in/out animations for intro and game over screens  
+- Create web app manifest and make installable as a PWA  
+- Add web worker for offline play  
+- Create and add app icon  
 
-## Done
+## 🚫 Won’t Do
 
-- Points (every turn one point, every gem one point)
-- Add gems at random squares
-- Level creation
-- Make squares and gems opies of the same geometry and material
-- Make gems that were not collected fall with their tiles
-- Add Inter font
-- Add sounds
-- Limit level creation divergion
-- Fix camera movement to appear to move only forward
-- Allow button press without triggerting game start
-- Reset
-- +1 text when collecting a gem
-- Disable gem collection while falling
-- Add best score to store and functionality
-- Add games played to store and functionality
+- Migrate styles to Tailwind CSS  
