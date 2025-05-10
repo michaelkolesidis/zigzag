@@ -17,7 +17,7 @@ export const MAX_DIVERGENCE = 3; // how far to the x and z axis the path can div
 // Sphere (Player)
 export const SPHERE_RADIUS = 0.25;
 export const INITIAL_SPEED = 6;
-export const SPEED_INCREMENT = 0.01225;
+export const SPEED_INCREMENT = 0.0125;
 
 // Gems
 export const GEM_RADIUS = 0.35;
