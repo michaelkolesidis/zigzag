@@ -41,7 +41,7 @@
 }
 
 #settings {
-  background: #f283c0;
+  background: #fd44e9;
   border-radius: 50%;
   padding: 2.5px;
   width: 45px;
@@ -79,10 +79,17 @@ h1 {
 
 #copyright {
   position: absolute;
-  bottom: 10px;
-  font-size: 0.7em;
+  bottom: 5px;
+  font-size: 0.75em;
   text-align: center;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#copyright a {
+  text-decoration: none;
 }
 
 /* Intro animation */

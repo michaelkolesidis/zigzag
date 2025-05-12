@@ -3,12 +3,10 @@
 - Add a dynamic light that follows the ball  
 - Make the light change color periodically (e.g., every 50 points)  
 - Align camera movement with the ball's world Y position  
-- Add shadows for the ball and gems  
 - Improve the app icon  
 
 ## 💡 Under Consideration
 
-- Replace `SphereGeometry` with `CircleGeometry` for better performance and easier skinning  
 - Introduce unlockable ball skins using collected gems  
 - Add an in-game settings menu (audio, graphics, difficulty toggle)
 - Add shareable scorecard or screenshot (for sharing to social media)
@@ -42,3 +40,5 @@ Include a dev mode to toggle unlimited lives or test gem spawning
 ## 🚫 Won’t Do
 
 - Migrate styles to Tailwind CSS  
+- Add shadows for the ball and gems  
+- Replace `SphereGeometry` with `CircleGeometry` for better performance and easier skinning  

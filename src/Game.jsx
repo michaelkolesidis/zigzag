@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useCallback } from 'react';
+import { useRef, useEffect, useCallback } from 'react';
 import { useFrame, useThree } from '@react-three/fiber';
 import * as THREE from 'three';
 import { Perf } from 'r3f-perf';
@@ -128,7 +128,10 @@ export default function Game() {
         } else {
           // Ready Phase
           if (phase === 'ready') {
-            if (e.target.alt === 'Settings icon') {
+            if (
+              e.target.alt === 'Settings icon' ||
+              e.target.closest('#copyright')
+            ) {
               return;
             }
             if (sound) {

@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
 import { Text, Billboard } from '@react-three/drei';
 
@@ -28,7 +28,7 @@ export default function FloatingText({ position, content, onComplete }) {
         ref={text}
         fontSize={0.5}
         fontWeight={500}
-        color="#f283c0"
+        color="#fd44e9"
         anchorX="center"
         anchorY="middle"
         material-toneMapped={false}

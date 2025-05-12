@@ -67,8 +67,14 @@ export default function Interface() {
             <p className="intro-data">GAMES PLAYED: {gamesPlayed}</p>
           </div>
           <div id="copyright" className="slide-item-intro-bottom">
-            <p>© Michael Kolesidis</p>
-            <p>Licensed under the AGPL-3.0-or-later</p>
+            <a
+              href="https:/michaelkolesidis.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <p>© Michael Kolesidis</p>
+              <p>Licensed under the GNU AGPLv3</p>
+            </a>
           </div>
         </div>
       )}
@@ -95,7 +101,7 @@ export default function Interface() {
             <div
               id="gameover-score-container"
               className="slide-item-gameover"
-              style={isNewBest ? { background: '#f283c0' } : {}}
+              style={isNewBest ? { background: '#fd44e9' } : {}}
             >
               <p
                 className="gameover-score-title"

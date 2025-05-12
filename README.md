@@ -1,6 +1,6 @@
 # ZigZag
 
-![Screenshot](./screenshots/screenshot.png)
+![Screenshot](./screenshots/screenshot-01.png)
 
 A 3D _ZigZag_ game built with React Three Fiber.
 
@@ -72,17 +72,11 @@ Visually, the game is stripped to its core elements: clean geometric shapes, sof
 
 ## Mobile
 
-![01](/screenshots/01.png)
+![Screenshot](./screenshots/screenshot-02.png)
 
-![02](/screenshots/02.png)
+![Screenshot](./screenshots/screenshot-03.png)
 
-![03](/screenshots/03.png)
-
-### Desktop
-
-![04](/screenshots/04.png)
-
-![05](/screenshots/05.png)
+![Screenshot](./screenshots/screenshot-04.png)
 
 ## 🤝 Contributing
 
