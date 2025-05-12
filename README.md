@@ -70,8 +70,6 @@ Visually, the game is stripped to its core elements: clean geometric shapes, sof
 
 ## 📸 Screenshots
 
-## Mobile
-
 ![Screenshot](./screenshots/screenshot-02.png)
 
 ![Screenshot](./screenshots/screenshot-03.png)
