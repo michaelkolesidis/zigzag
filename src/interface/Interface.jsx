@@ -68,7 +68,7 @@ export default function Interface() {
           </div>
           <div id="copyright" className="slide-item-intro-bottom">
             <a
-              href="https:/michaelkolesidis.com"
+              href="https://michaelkolesidis.com"
               target="_blank"
               rel="noopener noreferrer"
             >
