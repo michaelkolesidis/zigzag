@@ -1,6 +1,6 @@
 // Camera
 export const CAMERA_OFFSET_X = 19.05;
-export const CAMERA_OFFSET_Y = 14.66; // TODO: 12 after fixing camera y position
+export const CAMERA_OFFSET_Y = 12;
 export const CAMERA_OFFSET_Z = 15;
 export const ZOOM_LEVEL_MOBILE = 35;
 export const ZOOM_LEVEL_DESKTOP = 70;
