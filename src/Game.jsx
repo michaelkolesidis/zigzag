@@ -241,7 +241,7 @@ export default function Game() {
     <>
       <Sphere ref={sphere} />
       <Level />
-      <Lights />
+      {/* <Lights /> */}
       {performance && <Perf position="bottom-left" />}
     </>
   );

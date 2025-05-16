@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'Inter';
-  src: url('/fonts/Inter-VariableFont_opsz,wght.ttf') format('truetype');
+  src: url('/fonts/PrintChar21.ttf') format('truetype');
   font-weight: 100 900;
   font-style: normal;
 }
@@ -27,6 +27,7 @@ body {
   overflow: hidden;
   touch-action: none;
   overscroll-behavior: none;
+  background-color: black;
 }
 
 html,

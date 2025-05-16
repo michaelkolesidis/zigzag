@@ -1,5 +1,5 @@
 * {
-  color: rgb(34, 34, 34);
+  color: #33ff33;
 }
 
 #interface {
@@ -41,7 +41,7 @@
 }
 
 #settings {
-  background: #fd44e9;
+  background: #33ff33;
   border-radius: 50%;
   padding: 2.5px;
   width: 45px;
@@ -130,9 +130,10 @@ h1 {
   right: 10px;
   font-size: 3em;
   z-index: 2;
-  background: #e0e0e0;
+  background: #000000;
+  border: 1px solid #33ff33;
   margin: auto;
-  border-radius: 5px;
+  /* border-radius: 5px; */
   margin-bottom: 20px;
 }
 

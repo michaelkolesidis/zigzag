@@ -101,29 +101,29 @@ export default function Interface() {
             <div
               id="gameover-score-container"
               className="slide-item-gameover"
-              style={isNewBest ? { background: '#fd44e9' } : {}}
+              style={isNewBest ? { background: '#33ff33' } : {}}
             >
               <p
                 className="gameover-score-title"
-                style={isNewBest ? { color: '#ffffff' } : {}}
+                style={isNewBest ? { color: '#000000' } : {}}
               >
                 SCORE
               </p>
               <p
                 className="gameover-score"
-                style={isNewBest ? { color: '#ffffff' } : {}}
+                style={isNewBest ? { color: '#000000' } : {}}
               >
                 {score}
               </p>
               <p
                 className="gameover-score-title"
-                style={isNewBest ? { color: '#ffffff' } : {}}
+                style={isNewBest ? { color: '#000000' } : {}}
               >
                 BEST SCORE
               </p>
               <p
                 className="gameover-score"
-                style={isNewBest ? { color: '#ffffff' } : {}}
+                style={isNewBest ? { color: '#000000' } : {}}
               >
                 {bestScore}
               </p>

@@ -8,6 +8,15 @@ import {
   GEM_ROUGHNESS,
   GEM_ROTATION,
 } from '../../constants/constants';
+import {
+  useGLTF,
+  AccumulativeShadows,
+  RandomizedLight,
+  Edges,
+  OrbitControls,
+  Outlines,
+  Environment,
+} from '@react-three/drei';
 
 // Geometries and materials
 const coneGeometry = new THREE.ConeGeometry(
@@ -18,7 +27,7 @@ const coneGeometry = new THREE.ConeGeometry(
 coneGeometry.translate(0, GEM_RADIUS * 0.75, 0); // move tip to y = +1.5, base to y = 0
 
 const gemMaterial = new THREE.MeshStandardMaterial({
-  color: GEM_COLOR,
+  color: 'black',
   metalness: GEM_METALNESS,
   roughness: GEM_ROUGHNESS,
 });
@@ -33,14 +42,19 @@ export default function Gem({ gemData, gemRef }) {
       rotation={GEM_ROTATION}
     >
       {/* Top cone: points up, base at y = 0 */}
-      <mesh geometry={coneGeometry} material={gemMaterial} />
+      <mesh geometry={coneGeometry} material={gemMaterial}>
+        {' '}
+        <Edges linewidth={3} threshold={15} color={'#06cf06'} />
+      </mesh>
 
       {/* Bottom cone: points down */}
       <mesh
         geometry={coneGeometry}
         material={gemMaterial}
         rotation={[Math.PI, 0, 0]}
-      />
+      >
+        <Edges linewidth={3} threshold={15} color={'#06cf06'} />
+      </mesh>
     </group>
   );
 }

@@ -28,7 +28,7 @@ export default function FloatingText({ position, content, onComplete }) {
         ref={text}
         fontSize={0.5}
         fontWeight={500}
-        color="#fd44e9"
+        color="#06cf06"
         anchorX="center"
         anchorY="middle"
         material-toneMapped={false}

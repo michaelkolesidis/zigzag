@@ -6,6 +6,7 @@ import {
   SPHERE_METALNESS,
   SPHERE_ROUGHNESS,
 } from './constants/constants.js';
+import { Edges } from '@react-three/drei';
 
 const Sphere = forwardRef((props, ref) => {
   return (
@@ -13,11 +14,8 @@ const Sphere = forwardRef((props, ref) => {
       <sphereGeometry
         args={[SPHERE_RADIUS, SPHERE_SEGMENTS, SPHERE_SEGMENTS]}
       />
-      <meshStandardMaterial
-        color={SPHERE_COLOR}
-        metalness={SPHERE_METALNESS}
-        roughness={SPHERE_ROUGHNESS}
-      />
+      <meshStandardMaterial color={0x000000} />
+      <Edges linewidth={3} threshold={5} color={'#06cf06'} />
     </mesh>
   );
 });
