@@ -72,9 +72,18 @@ export default function Interface() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <p>© Michael Kolesidis</p>
-              <p>Licensed under the GNU AGPLv3</p>
+              © Michael Kolesidis
             </a>
+            <p>
+              Licensed under AGPLv3 •{' '}
+              <a
+                href="https://github.com/michaelkolesidis/zigzag"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Source
+              </a>
+            </p>
           </div>
         </div>
       )}
