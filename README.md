@@ -67,6 +67,7 @@ Visually, the game is stripped to its core elements: clean geometric shapes, sof
 | **Installable PWA**              | Fully installable as a Progressive Web App for mobile and desktop.                                  |
 | **Offline Play**                 | Once installed, the game is fully playable offline via local caching.                               |
 | **Keyboard Support**             | Game can be played using the keyboard, Enter/Arrow Up/Arrow Down to turn, Space to reset            |
+| **Dark Mode**                    | Darker theme with adjusted colors for low-light play.                                               |
 
 ## 📸 Screenshots
 

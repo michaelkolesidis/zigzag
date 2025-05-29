@@ -1,5 +1,5 @@
 * {
-  color: rgb(34, 34, 34);
+  color: #222222;
 }
 
 #interface {
@@ -40,17 +40,26 @@
   z-index: 2;
 }
 
-#settings {
+#settings,
+#dark-button {
   background: #fd44e9;
   border-radius: 50%;
-  padding: 2.5px;
   width: 45px;
   position: absolute;
   top: 20px;
-  left: 20px;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+#settings {
+  padding: 2.5px;
+  left: 20px;
+}
+
+#dark-button {
+  padding: 5px;
+  right: 20px;
 }
 
 h1 {
@@ -123,12 +132,12 @@ h1 {
 #gameover-score-container {
   width: 200px;
   padding: 20px;
+  font-size: 3em;
 }
 
 .gameover-button,
 #gameover-score-container {
   right: 10px;
-  font-size: 3em;
   z-index: 2;
   background: #e0e0e0;
   margin: auto;
@@ -179,4 +188,26 @@ h1 {
   transition-delay: 0.7s;
   opacity: 1;
   transform: translateX(0);
+}
+
+/* Dark mode */
+.dark {
+  color: #ffffff;
+}
+
+#settings.dark-btn,
+#dark-button.dark-btn {
+  background: #c435b6;
+}
+
+.dark-gameover-button,
+#gameover-score-container.dark-container {
+  right: 10px;
+  z-index: 2;
+  color: #ffffff;
+  background: #222222;
+  border: 1px solid #e0e0e0;
+  margin: auto;
+  border-radius: 5px;
+  margin-bottom: 20px;
 }

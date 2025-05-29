@@ -129,7 +129,8 @@ export default function Game() {
           // Ready Phase
           if (phase === 'ready') {
             if (
-              e.target.alt === 'Settings icon' ||
+              e.target.alt === 'Sound icon' ||
+              e.target.alt === 'Dark icon' ||
               e.target.closest('#copyright')
             ) {
               return;

@@ -7,7 +7,7 @@ import { useEffect } from 'react';
 import { ZOOM_LEVEL_DESKTOP, ZOOM_LEVEL_MOBILE } from './constants/constants';
 
 export default function App() {
-  const { isMobile } = useGame((state) => state);
+  const { isMobile, dark } = useGame((state) => state);
 
   useEffect(() => {
     // Prevent right click
@@ -24,11 +24,12 @@ export default function App() {
 
   return (
     <>
-      <Interface />
+      <Interface className="dark" />
       <Canvas
         orthographic
         camera={{ zoom: isMobile ? ZOOM_LEVEL_MOBILE : ZOOM_LEVEL_DESKTOP }}
       >
+        <color attach="background" args={[dark ? '#222222' : '#ffffff']} />
         <Game />
       </Canvas>
     </>

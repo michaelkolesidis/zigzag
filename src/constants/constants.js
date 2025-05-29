@@ -7,7 +7,9 @@ export const ZOOM_LEVEL_DESKTOP = 72;
 
 // Lights
 export const AMBIENT_INTENSITY = 2.5;
+export const AMBIENT_INTENSITY_DARK = 1.25;
 export const DIRECTIONAL_INTENSITY = 3.5;
+export const DIRECTIONAL_INTENSITY_DARK = 1.75;
 export const DIRECTIONAL_POSITION = [15, 30, 10];
 
 // Physics

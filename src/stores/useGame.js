@@ -20,6 +20,16 @@ export default create(
         });
       },
 
+      // Dark mode
+      dark: getLocalStorage('dark') ?? true,
+      toggleDark: () => {
+        set((state) => {
+          const newDarkState = !state.dark;
+          setLocalStorage('dark', newDarkState);
+          return { dark: newDarkState };
+        });
+      },
+
       // Phases
       phase: 'ready', // ready, playing, gameover
       setPhase: (phase) => set({ phase }),
