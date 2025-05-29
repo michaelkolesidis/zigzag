@@ -53,10 +53,10 @@ export default function Interface() {
       {phase === 'ready' && (
         <div id="intro-screen" className={`${animateIntro ? 'animate' : ''}`}>
           <img
-            id="settings"
-            className={dark ? 'dark-btn' : ''}
+            id="sound-toggle"
+            className={dark ? 'dark-button' : ''}
             src={sound ? SoundOn : SoundOff}
-            alt="Sound icon"
+            alt="Sound toggle"
             onClick={() => {
               toggleSound();
               if (!sound) {
@@ -66,13 +66,16 @@ export default function Interface() {
             }}
           />
           <img
-            id="dark-button"
-            className={dark ? 'dark-btn' : ''}
+            id="dark-toggle"
+            className={dark ? 'dark-button' : ''}
             src={Dark}
-            alt="Dark icon"
+            alt="Dark toggle"
             onClick={() => {
               toggleDark();
-              console.log('Dark mode toggled:', dark);
+              if (sound) {
+                uiSound.currentTime = 0;
+                uiSound.play();
+              }
             }}
           />
           <h1
@@ -120,7 +123,11 @@ export default function Interface() {
       )}
 
       {/* Score */}
-      {phase === 'playing' && <div id="score">{score}</div>}
+      {phase === 'playing' && (
+        <div id="score" className={dark ? 'dark' : ''}>
+          {score}
+        </div>
+      )}
 
       {/* Game Over Screen */}
       {(phase === 'ready' || phase === 'gameover') && (

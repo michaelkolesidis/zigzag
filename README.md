@@ -11,8 +11,7 @@ How far can you make it?
 
 **Play Online:**
 
-[https://playzigzag.vercel.app/](https://playzigzag.vercel.app/)  
-[https://playzigzag.netlify.app/](https://playzigzag.netlify.app/)  
+[zigzag.michaelkolesidis.com](https://zigzag.michaelkolesidis.com/)  
 
 ![Attention! Free Software](./public/images/attention-free-software.png)
 
@@ -35,6 +34,8 @@ The core technologies of _ZigZag_ are Three.js and React. The following librarie
 | Vite              |   MIT   | Frontend development tooling                           |
 
 ## 🎮 Overview
+
+![Logo](./public/logo.png)
 
 _ZigZag_ is a minimalist, abstract endless runner where the player controls a black ball ⚫ rolling along a narrow, zigzagging ↖️↗️ path suspended in midair. With each tap, the ball changes direction by 90°, and the goal is to stay on the path for as long as possible. The challenge lies in tapping the screen at the right moment to prevent the ball from falling off the edges. This simple, one-touch mechanic creates a high-stakes test of timing and precision, as a single misstep sends the ball tumbling off the path, ending the run.
 
@@ -81,7 +82,7 @@ Visually, the game is stripped to its core elements: clean geometric shapes, sof
 
 Contributions to _ZigZag_ are always welcome and greatly appreciated! Whether you're fixing bugs, adding new features, improving the codebase, or enhancing the documentation, there's always room for improvement. Fork the repository, make your changes, and create a pull request.
 
-**ZigZag** is in active development, so if you have ideas or want to help, feel free to follow these steps:
+_ZigZag_ is in active development, so if you have ideas or want to help, feel free to follow these steps:
 
 1. We recommend starting by creating an issue to discuss any proposed changes.
 2. Fork the project.

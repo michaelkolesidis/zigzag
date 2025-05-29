@@ -7,9 +7,9 @@ export const ZOOM_LEVEL_DESKTOP = 72;
 
 // Lights
 export const AMBIENT_INTENSITY = 2.5;
-export const AMBIENT_INTENSITY_DARK = 1.25;
+export const AMBIENT_INTENSITY_DARK = 1;
 export const DIRECTIONAL_INTENSITY = 3.5;
-export const DIRECTIONAL_INTENSITY_DARK = 1.75;
+export const DIRECTIONAL_INTENSITY_DARK = 1.4;
 export const DIRECTIONAL_POSITION = [15, 30, 10];
 
 // Physics
@@ -37,6 +37,7 @@ export const INITIAL_SPEED = 6;
 export const SPEED_INCREMENT = 0.0125;
 export const SPHERE_SEGMENTS = 32;
 export const SPHERE_COLOR = '#888888';
+export const SPHERE_COLOR_DARK = '#bbbbbb';
 export const SPHERE_METALNESS = 1;
 export const SPHERE_ROUGHNESS = 0.7;
 
