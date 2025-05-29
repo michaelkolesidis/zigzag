@@ -21,7 +21,7 @@ export default create(
       },
 
       // Dark mode
-      dark: getLocalStorage('dark') ?? true,
+      dark: getLocalStorage('dark') ?? false,
       toggleDark: () => {
         set((state) => {
           const newDarkState = !state.dark;
