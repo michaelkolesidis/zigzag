@@ -35,7 +35,7 @@ The core technologies of _ZigZag_ are Three.js and React. The following librarie
 
 ## 🎮 Overview
 
-![Logo](./public/logo.png)
+![Logo](./public/favicon/android-chrome-192x192.png)
 
 _ZigZag_ is a minimalist, abstract endless runner where the player controls a black ball ⚫ rolling along a narrow, zigzagging ↖️↗️ path suspended in midair. With each tap, the ball changes direction by 90°, and the goal is to stay on the path for as long as possible. The challenge lies in tapping the screen at the right moment to prevent the ball from falling off the edges. This simple, one-touch mechanic creates a high-stakes test of timing and precision, as a single misstep sends the ball tumbling off the path, ending the run.
 
