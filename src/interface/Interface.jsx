@@ -5,10 +5,11 @@ import '../styles/interface.css';
 import SoundOn from '../assets/icons/sound-on.svg';
 import SoundOff from '../assets/icons/sound-off.svg';
 import Dark from '../assets/icons/dark.svg';
+import { UI_SOUND_VOLUME } from '../constants/constants';
 
 // Sound effects
 const uiSound = new Audio('sounds/ui.mp3');
-uiSound.volume = 0.75;
+uiSound.volume = UI_SOUND_VOLUME;
 
 export default function Interface() {
   const {

@@ -36,19 +36,22 @@ const gemSound = new Audio('sounds/gem.mp3');
 
 export default function Level() {
   // Store
-  const addPoints = useGame((state) => state.addPoints);
-  const phase = useGame((state) => state.phase);
-  const directions = useGame((state) => state.directions);
-  const sound = useSound((state) => state.sound);
-  const tiles = useGame((state) => state.tiles);
-  const setTiles = useGame((state) => state.setTiles);
-  const gems = useGame((state) => state.gems);
-  const setGems = useGame((state) => state.setGems);
-  const spherePos = useGame((state) => state.spherePos);
-  const isOnPlatform = useGame((state) => state.isOnPlatform);
-  const setIsOnPlatform = useGame((state) => state.setIsOnPlatform);
-  const floatingTexts = useGame((state) => state.floatingTexts);
-  const setFloatingTexts = useGame((state) => state.setFloatingTexts);
+  const {
+    addPoints,
+    phase,
+    debug,
+    directions,
+    tiles,
+    setTiles,
+    gems,
+    setGems,
+    spherePos,
+    isOnPlatform,
+    setIsOnPlatform,
+    floatingTexts,
+    setFloatingTexts,
+  } = useGame((state) => state);
+  const { sound } = useSound((state) => state);
 
   // Create ID generators for tiles and gems
   const tileIdGenerator = useMemo(() => createIdGenerator(), []);
@@ -336,7 +339,7 @@ export default function Level() {
       }
 
       // Tile Interaction & Fall Trigger
-      setIsOnPlatform(false);
+      if (!debug) setIsOnPlatform(false);
       let currentContactTileId = null;
       const halfTile = TILE_SIZE / 2;
 
@@ -441,7 +444,7 @@ export default function Level() {
         />
       ))}
 
-      {/* To avoid screen flash caused by unsupported GPOS table LookupType log */}
+      {/* To avoid screen flashing caused by unsupported GPOS table LookupType log */}
       {/* TODO: Find the cause of the error and fix it */}
       <FloatingText key="for-error" position={[0, -1, 0]} content="" />
     </>

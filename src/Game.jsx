@@ -17,6 +17,7 @@ import {
   CAMERA_OFFSET_X,
   CAMERA_OFFSET_Y,
   CAMERA_OFFSET_Z,
+  UI_SOUND_VOLUME,
 } from './constants/constants.js';
 
 // Components
@@ -28,7 +29,7 @@ import Sphere from './Sphere.jsx';
 const tapSound = new Audio('sounds/tap.mp3');
 const fallSound = new Audio('sounds/fall.mp3');
 const uiSound = new Audio('sounds/ui.mp3');
-uiSound.volume = 0.75;
+uiSound.volume = UI_SOUND_VOLUME;
 
 export default function Game() {
   // Store
@@ -38,6 +39,7 @@ export default function Game() {
     gamesPlayed,
     setGamesPlayed,
     phase,
+    debug,
     setPhase,
     addPoints,
     resetScore,
@@ -156,11 +158,6 @@ export default function Game() {
           toggleSound();
         }
 
-        // Toggle performance panel
-        if (e.type === 'keydown' && e.code === 'KeyP') {
-          togglePerformance();
-        }
-
         if (
           e.type === 'keydown' &&
           e.code === 'Space' &&
@@ -219,8 +216,10 @@ export default function Game() {
 
       // Sphere Fall Detection
       if (!isOnPlatform) {
-        if (score > bestScore) {
-          setBestScore(score);
+        if (!debug) {
+          if (score > bestScore) {
+            setBestScore(score);
+          }
         }
 
         if (sound) {

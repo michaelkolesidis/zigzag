@@ -12,13 +12,6 @@ export default create(
 
       // Show performance
       performance: window.location.hash === '#debug',
-      togglePerformance: () => {
-        set((state) => {
-          return {
-            performance: !state.performance,
-          };
-        });
-      },
 
       // Dark mode
       dark: getLocalStorage('dark') ?? false,
@@ -29,6 +22,9 @@ export default create(
           return { dark: newDarkState };
         });
       },
+
+      // Debug mode
+      debug: window.location.hash === '#debug',
 
       // Phases
       phase: 'ready', // ready, playing, gameover

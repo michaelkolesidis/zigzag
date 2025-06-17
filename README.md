@@ -67,8 +67,9 @@ Visually, the game is stripped to its core elements: clean geometric shapes, sof
 | **Performance Monitor**          | Press P to toggle a Three.js performance monitor or add #debug after the URL to keep it on.         |
 | **Installable PWA**              | Fully installable as a Progressive Web App for mobile and desktop.                                  |
 | **Offline Play**                 | Once installed, the game is fully playable offline via local caching.                               |
-| **Keyboard Support**             | Game can be played using the keyboard, Enter/Arrow Up/Arrow Down to turn, Space to reset            |
+| **Keyboard Support**             | Game can be played using the keyboard, Enter/Arrow Up/Arrow Down to turn, Space to reset.           |
 | **Dark Mode**                    | Darker theme with adjusted colors for low-light play.                                               |
+| **Debug Mode**                   | Add _#debug_ to the URL to disable falling and show performance stats.                              |
 
 ## 📸 Screenshots
 

@@ -2,6 +2,13 @@ import { useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
 import { Text, Billboard } from '@react-three/drei';
 import useGame from '../../stores/useGame';
+import {
+  FLOATING_TEXT_FONT_SIZE,
+  FLOATING_TEXT_FONT_WEIGHT,
+  FLOATING_TEXT_COLOR,
+  FLOATING_TEXT_COLOR_DARK,
+  FLOATING_TEXT_OPACITY,
+} from '../../constants/constants';
 
 export default function FloatingText({ position, content, onComplete }) {
   const text = useRef();
@@ -28,14 +35,14 @@ export default function FloatingText({ position, content, onComplete }) {
     <Billboard position={position}>
       <Text
         ref={text}
-        fontSize={0.5}
-        fontWeight={500}
-        color={dark ? '#cb24b8' : '#fd44e9'}
+        fontSize={FLOATING_TEXT_FONT_SIZE}
+        fontWeight={FLOATING_TEXT_FONT_WEIGHT}
+        color={dark ? FLOATING_TEXT_COLOR_DARK : FLOATING_TEXT_COLOR}
         anchorX="center"
         anchorY="middle"
         material-toneMapped={false}
         material-transparent
-        material-opacity={2}
+        material-opacity={FLOATING_TEXT_OPACITY}
       >
         {content}
       </Text>
