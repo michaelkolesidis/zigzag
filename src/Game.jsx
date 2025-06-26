@@ -7,7 +7,7 @@ import { Perf } from 'r3f-perf';
 import useGame from './stores/useGame';
 import useSound from './stores/useSound.js';
 
-// Constants and utilities
+// Constants and Utilities
 import {
   OBJECT_REMOVAL_POSITION_Y,
   SPHERE_RADIUS,
@@ -26,7 +26,7 @@ import Level from './level/Level.jsx';
 import Lights from './Lights.jsx';
 import Sphere from './Sphere.jsx';
 
-// Sound effects
+// Sound Effects
 const tapSound = new Audio('sounds/tap.mp3');
 const fallSound = new Audio('sounds/fall.mp3');
 const uiSound = new Audio('sounds/ui.mp3');
@@ -58,7 +58,7 @@ export default function Game() {
   // Camera
   const { camera } = useThree();
 
-  // Sphere movement
+  // Sphere Movement
   const sphere = useRef();
   const speed = useRef(INITIAL_SPEED);
   const velocity = useRef(new THREE.Vector3(0, 0, 0));
@@ -66,12 +66,16 @@ export default function Game() {
   const currentDirection = useRef(new THREE.Vector3(0, 0, -1));
   const targetDirection = useRef(new THREE.Vector3(0, 0, -1));
 
+  // Auto Clicker Cheating Prevention
+  const lastActionTime = useRef(0);
+  const MIN_INTERVAL = 100; // minimum interval between actions in milliseconds
+
   // Camera Setup
   const setupCamera = useCallback(() => {
     if (!sphere.current) return;
     const spherePos = sphere.current.position;
 
-    // Initial camera position
+    // Initial Camera Position
     camera.position.set(
       spherePos.x - CAMERA_OFFSET_X,
       spherePos.y + CAMERA_OFFSET_Y,
@@ -110,6 +114,8 @@ export default function Game() {
   // Input Handling
   useEffect(() => {
     const handleInput = (e) => {
+      const now = Date.now();
+
       // Gameplay
       if (
         e.type === 'pointerdown' ||
@@ -118,6 +124,12 @@ export default function Game() {
             e.code === 'ArrowUp' ||
             e.code === 'ArrowDown'))
       ) {
+        // Prevent rapid repeated inputs to avoid auto clicker cheating
+        if (now - lastActionTime.current < MIN_INTERVAL) {
+          return; // Skip input if too fast
+        }
+        lastActionTime.current = now;
+
         // Playing Phase
         if (phase === 'playing' && isOnPlatform) {
           if (sound) {
@@ -154,7 +166,7 @@ export default function Game() {
       }
 
       if (!isMobile) {
-        // Toggle sound
+        // Toggle Sound
         if (e.type === 'keydown' && e.code === 'KeyM') {
           toggleSound();
         }
