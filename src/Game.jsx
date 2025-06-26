@@ -13,6 +13,7 @@ import {
   SPHERE_RADIUS,
   INITIAL_SPEED,
   SPEED_INCREMENT,
+  SPEED_LIMIT,
   GRAVITY,
   CAMERA_OFFSET_X,
   CAMERA_OFFSET_Y,
@@ -205,7 +206,10 @@ export default function Game() {
         .multiplyScalar(speed.current * delta);
       spherePos.add(moveDelta);
       velocity.current.copy(moveDelta.clone().divideScalar(delta));
-      speed.current += SPEED_INCREMENT * delta;
+      speed.current = Math.min(
+        speed.current + SPEED_INCREMENT * delta,
+        SPEED_LIMIT
+      );
 
       // Camera Movement (only if sphere not falling)
       if (spherePos.y > OBJECT_REMOVAL_POSITION_Y) {

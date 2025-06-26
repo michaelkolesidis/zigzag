@@ -41,8 +41,9 @@ export const MAX_DIVERGENCE = 3; // how far to the x and z axis the path can div
 
 // Sphere (Player)
 export const SPHERE_RADIUS = 0.26;
-export const INITIAL_SPEED = 6;
-export const SPEED_INCREMENT = 0.0125;
+export const INITIAL_SPEED = 5.5;
+export const SPEED_INCREMENT = 0.012;
+export const SPEED_LIMIT = 10;
 export const SPHERE_SEGMENTS = 32;
 export const SPHERE_COLOR = '#888888';
 export const SPHERE_COLOR_DARK = '#bbbbbb';
