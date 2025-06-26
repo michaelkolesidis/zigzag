@@ -106,7 +106,7 @@ export default function Level() {
 
     // Set state in resetGame or useEffect after clearing previous state
     setTiles(initialTilesData);
-  }, []);
+  }, [setTiles, tileIdGenerator]);
 
   let divergenceX = useRef(0);
   let divergenceZ = useRef(0);
@@ -162,7 +162,7 @@ export default function Level() {
     }
 
     lastTilePosition.current.copy(nextPos);
-  }, []);
+  }, [gemIdGenerator, setGems, setTiles, tileIdGenerator]);
 
   const resetLevel = useCallback(() => {
     lastTilePosition.current.set(0, -TILE_DEPTH / 2, 0);

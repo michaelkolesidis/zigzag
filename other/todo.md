@@ -2,8 +2,6 @@
 
 - Add a dynamic light that follows the ball  
 - Make the light change color periodically (e.g., every 50 points)  
-- Align camera movement with the ball's world Y position  
-- Improve the app icon  
 
 ## 💡 Under Consideration
 
@@ -35,7 +33,9 @@ Include a dev mode to toggle unlimited lives or test gem spawning
 - Add slide-in/out animations for intro and game over screens  
 - Create web app manifest and make installable as a PWA  
 - Add web worker for offline play  
-- Create and add app icon  
+- Create and add app icon
+- Improve the app icon  
+- Align camera position with the ball's position
 
 ## 🚫 Won’t Do
 

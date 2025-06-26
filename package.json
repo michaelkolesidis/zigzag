@@ -5,7 +5,7 @@
     "email": "michael.kolesidis@gmail.com"
   },
   "license": "AGPL-3.0-or-later",
-  "description": "A 3D ZigZag game built with React Three Fiber and Vite.",
+  "description": "A 3D ZigZag game built with React Three Fiber.",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -30,13 +30,13 @@
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
     "@types/three": "^0.177.0",
-    "@vitejs/plugin-react": "^4.5.2",
+    "@vitejs/plugin-react": "^4.6.0",
     "eslint": "^9.29.0",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.20",
     "globals": "^16.2.0",
     "typescript": "^5.8.3",
-    "vite": "^6.3.5",
+    "vite": "^7.0.0",
     "vite-plugin-pwa": "^1.0.0"
   }
 }

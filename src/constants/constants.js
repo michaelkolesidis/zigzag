@@ -4,7 +4,7 @@ export const CAMERA_OFFSET_Y = 12;
 export const CAMERA_OFFSET_Z = 15;
 export const ZOOM_LEVEL_MOBILE = 40;
 export const ZOOM_LEVEL_DESKTOP = 72;
-export const CAMERA_FAR = 4000;
+export const CAMERA_FAR = 60;
 
 // Lights
 export const AMBIENT_INTENSITY = 2.5;
