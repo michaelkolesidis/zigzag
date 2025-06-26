@@ -69,7 +69,7 @@ Visually, the game is stripped to its core elements: clean geometric shapes, sof
 | **Offline Play**                 | Once installed, the game is fully playable offline via local caching.                                  |
 | **Keyboard Support**             | Game can be played using the keyboard, Enter/Arrow Up/Arrow Down to turn, Space to reset.              |
 | **Dark Mode**                    | Darker theme with adjusted colors for low-light play.                                                  |
-| **Cheating Prevention**          | Limit the rate of user inputs to prevent autoclicker abuse.                                            |
+<!-- | **Cheating Prevention**          | Limit the rate of user inputs to prevent autoclicker abuse.                                            | -->
 | **Debug Mode**                   | Add _#debug_ to the URL to disable falling and show performance stats.                                 |
 
 ## 📸 Screenshots

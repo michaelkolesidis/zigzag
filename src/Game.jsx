@@ -67,8 +67,8 @@ export default function Game() {
   const targetDirection = useRef(new THREE.Vector3(0, 0, -1));
 
   // Auto Clicker Cheating Prevention
-  const lastActionTime = useRef(0);
-  const MIN_INTERVAL = 100; // minimum interval between actions in milliseconds
+  // const lastActionTime = useRef(0);
+  // const MIN_INTERVAL = 100; // minimum interval between actions in milliseconds
 
   // Camera Setup
   const setupCamera = useCallback(() => {
@@ -114,7 +114,7 @@ export default function Game() {
   // Input Handling
   useEffect(() => {
     const handleInput = (e) => {
-      const now = Date.now();
+      // const now = Date.now();
 
       // Gameplay
       if (
@@ -125,10 +125,10 @@ export default function Game() {
             e.code === 'ArrowDown'))
       ) {
         // Prevent rapid repeated inputs to avoid auto clicker cheating
-        if (now - lastActionTime.current < MIN_INTERVAL) {
-          return; // Skip input if too fast
-        }
-        lastActionTime.current = now;
+        // if (now - lastActionTime.current < MIN_INTERVAL) {
+          // return; // Skip input if too fast
+        // }
+        // lastActionTime.current = now;
 
         // Playing Phase
         if (phase === 'playing' && isOnPlatform) {
