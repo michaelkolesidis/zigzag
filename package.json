@@ -7,14 +7,15 @@
   "license": "AGPL-3.0-or-later",
   "description": "A 3D ZigZag game built with React Three Fiber.",
   "private": true,
-  "version": "0.0.0",
+  "version": "2025.7.9.1",
   "type": "module",
   "scripts": {
     "dev": "vite --host",
     "start": "vite --host",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "prepare": "husky"
   },
   "dependencies": {
     "@react-three/drei": "^10.3.0",
@@ -27,6 +28,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.29.0",
+    "@types/node": "^24.0.12",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
     "@types/three": "^0.177.0",
@@ -35,6 +37,8 @@
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.20",
     "globals": "^16.2.0",
+    "husky": "^9.1.7",
+    "pinst": "^3.0.0",
     "typescript": "^5.8.3",
     "vite": "^7.0.0",
     "vite-plugin-pwa": "^1.0.0"

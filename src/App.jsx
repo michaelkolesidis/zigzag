@@ -16,6 +16,8 @@ export default function App() {
   const { isMobile, dark } = useGame((state) => state);
 
   useEffect(() => {
+    console.log(__APP_VERSION__);
+
     // Handle debug mode
     const handleHashChange = () => {
       const isDebug = window.location.hash === '#debug';
