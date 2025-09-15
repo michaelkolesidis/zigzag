@@ -24,6 +24,3 @@ dev-dist
 *.sln
 *.sw?
 Desktop.ini
-
-# Project-specific
-references
