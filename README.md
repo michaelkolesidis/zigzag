@@ -1,6 +1,4 @@
-# ZigZag
-
-![Screenshot](./screenshots/screenshot-01.png)
+![Poster](./images/poster-512.png)
 
 A 3D _ZigZag_ game built with React Three Fiber.
 
@@ -18,6 +16,8 @@ How far can you make it?
 This software is free (as in freedom). **If you use any part of this code, your project's source code must also be made publicly available under the same license.** This applies whether you modify the code or use it as it is in your own project. This ensures that all modifications and derivative works remain free software, so that everyone can benefit. If you are not willing to comply with these terms, you must refrain from using any part of this code.
 
 For full license terms and conditions, you can read the AGPL-3.0 at: [gnu.org/licenses/agpl-3.0.html](https://www.gnu.org/licenses/agpl-3.0.html).
+
+![Screenshot](./screenshots/screenshot-01.png)
 
 ## 🛠️ Technologies
 
