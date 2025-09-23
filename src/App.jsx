@@ -16,7 +16,10 @@ export default function App() {
   const { isMobile, dark } = useGame((state) => state);
 
   useEffect(() => {
-    console.log(__APP_VERSION__);
+    console.log(
+      `%cVersion: ${__APP_VERSION__}`,
+      'font-family: Arial, sans-serif; font-size: 16px; background-color: #000; color: #fff; font-weight: 600; padding: 2px 6px;'
+    );
 
     // Handle debug mode
     const handleHashChange = () => {
