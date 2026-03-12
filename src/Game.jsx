@@ -79,10 +79,10 @@ export default function Game() {
     camera.position.set(
       spherePos.x - CAMERA_OFFSET_X,
       spherePos.y + CAMERA_OFFSET_Y,
-      spherePos.z + CAMERA_OFFSET_Z
+      spherePos.z + CAMERA_OFFSET_Z,
     );
     camera.lookAt(
-      new THREE.Vector3(-(CAMERA_OFFSET_X - CAMERA_OFFSET_Z), 0, 0)
+      new THREE.Vector3(-(CAMERA_OFFSET_X - CAMERA_OFFSET_Z), 0, 0),
     );
   }, [camera]);
 
@@ -126,7 +126,7 @@ export default function Game() {
       ) {
         // Prevent rapid repeated inputs to avoid auto clicker cheating
         // if (now - lastActionTime.current < MIN_INTERVAL) {
-          // return; // Skip input if too fast
+        // return; // Skip input if too fast
         // }
         // lastActionTime.current = now;
 
@@ -220,7 +220,7 @@ export default function Game() {
       velocity.current.copy(moveDelta.clone().divideScalar(delta));
       speed.current = Math.min(
         speed.current + SPEED_INCREMENT * delta,
-        SPEED_LIMIT
+        SPEED_LIMIT,
       );
 
       // Camera Movement (only if sphere not falling)

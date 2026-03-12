@@ -13,7 +13,7 @@ import {
 const coneGeometry = new THREE.ConeGeometry(
   GEM_RADIUS,
   GEM_HEIGHT,
-  GEM_SEGMENTS
+  GEM_SEGMENTS,
 );
 coneGeometry.translate(0, GEM_RADIUS * 0.75, 0); // move tip to y = +1.5, base to y = 0
 

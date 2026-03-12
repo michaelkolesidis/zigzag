@@ -111,13 +111,17 @@ h1 {
 .slide-item-intro-top {
   opacity: 0;
   transform: translateY(-400%);
-  transition: transform 0.6s ease, opacity 0.6s ease;
+  transition:
+    transform 0.6s ease,
+    opacity 0.6s ease;
 }
 
 .slide-item-intro-bottom {
   opacity: 0;
   transform: translateY(400%);
-  transition: transform 0.6s ease, opacity 0.6s ease;
+  transition:
+    transform 0.6s ease,
+    opacity 0.6s ease;
 }
 
 /* Game over */
@@ -166,7 +170,9 @@ h1 {
 .slide-item-gameover {
   opacity: 0;
   transform: translateX(100%);
-  transition: transform 0.5s ease, opacity 0.5s ease;
+  transition:
+    transform 0.5s ease,
+    opacity 0.5s ease;
 }
 
 .gameover-content.animate .slide-item-gameover:nth-child(1) {

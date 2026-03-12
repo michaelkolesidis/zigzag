@@ -28,7 +28,7 @@ let currentCount = 0;
 if (match) {
   currentDatePart = `${match[1]}.${parseInt(match[2], 10)}.${parseInt(
     match[3],
-    10
+    10,
   )}`;
   currentCount = parseInt(match[4], 10);
 }

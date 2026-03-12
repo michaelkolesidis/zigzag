@@ -7,11 +7,11 @@ export const fancyLog = () => {
     `font-size:0;
    padding:${256 / 2}px ${256 / 2}px;
    background:url(${base64Image}) no-repeat;
-   background-size:256px 256px;`
+   background-size:256px 256px;`,
   );
 
-console.log(
-  "%cMade with 🩵 by Michael Kolesidis https://michaelkolesidis.com",
-  "font-family: Arial, sans-serif; font-size: 16px; font-weight: 600; "
-);
+  console.log(
+    '%cMade with 🩵 by Michael Kolesidis https://michaelkolesidis.com',
+    'font-family: Arial, sans-serif; font-size: 16px; font-weight: 600; ',
+  );
 };

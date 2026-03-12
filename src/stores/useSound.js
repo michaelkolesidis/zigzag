@@ -12,7 +12,7 @@ const useSound = create(
         return { sound: newSoundState };
       });
     },
-  }))
+  })),
 );
 
 export default useSound;

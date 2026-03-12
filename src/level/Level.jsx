@@ -151,7 +151,7 @@ export default function Level() {
       const gemPos = new THREE.Vector3(
         nextPos.x, // center of the tile x
         nextPos.y + GEM_HEIGHT_OFFSET, // place gem on top surface
-        nextPos.z // center of the tile z
+        nextPos.z, // center of the tile z
       );
       const newGem = {
         id: gemIdGenerator.generate(),
@@ -272,7 +272,7 @@ export default function Level() {
       // Remove Tiles That Finished Falling
       if (tilesToRemove.length > 0) {
         setTiles((prevTiles) =>
-          prevTiles.filter((tile) => !tilesToRemove.includes(tile.id))
+          prevTiles.filter((tile) => !tilesToRemove.includes(tile.id)),
         );
         tilesToRemove.forEach((id) => {
           delete tileMeshRefs.current[id];
@@ -282,7 +282,7 @@ export default function Level() {
 
       if (gemsToRemove.length > 0) {
         setGems((prevGems) =>
-          prevGems.filter((gem) => !gemsToRemove.includes(gem.id))
+          prevGems.filter((gem) => !gemsToRemove.includes(gem.id)),
         );
         gemsToRemove.forEach((id) => {
           delete gemMeshRefs.current[id];
@@ -330,7 +330,7 @@ export default function Level() {
       // Update gems state after checking collisions
       if (gemsToRemove.length > 0) {
         setGems((prevGems) =>
-          prevGems.filter((gem) => !gemsToRemove.includes(gem.id))
+          prevGems.filter((gem) => !gemsToRemove.includes(gem.id)),
         );
         gemsToRemove.forEach((id) => {
           delete gemMeshRefs.current[id];
@@ -395,7 +395,7 @@ export default function Level() {
           prevTiles.map((tile) => {
             const update = tilesToUpdateStatus.find((u) => u.id === tile.id);
             return update ? { ...tile, status: update.status } : tile;
-          })
+          }),
         );
 
         tilesToUpdateStatus.forEach((update) => {
