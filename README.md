@@ -21,7 +21,7 @@ This software is free (as in freedom). **If you use any part of this code, your 
 
 For full license terms and conditions, you can read the AGPL-3.0 at: [gnu.org/licenses/agpl-3.0.html](https://www.gnu.org/licenses/agpl-3.0.html).
 
-## 🛠️ Technologies
+## Technologies
 
 The core technologies of _ZigZag_ are Three.js and React. The following libraries and tools are used:
 
@@ -35,7 +35,7 @@ The core technologies of _ZigZag_ are Three.js and React. The following librarie
 | R3F-Perf          |   MIT   | Performance monitoring                                 |
 | Vite              |   MIT   | Frontend development tooling                           |
 
-## 🎮 Overview
+## Overview
 
 ![Logo](./public/favicon/android-chrome-192x192.png)
 
@@ -45,7 +45,7 @@ The path is endlessly and procedurally generated, forming a jagged zigzag route 
 
 Visually, the game is stripped to its core elements: clean geometric shapes, soft pastel hues, and no clutter — just motion and form. The world feels abstract and ambient, keeping full focus on the gameplay. There are no tutorials, no pause, and no distractions — just the ball, the path, and your reactions.
 
-## 🧩 Core Gameplay Mechanics & Features
+## Core Gameplay Mechanics & Features
 
 | **Feature**                      | **Description**                                                                                        |
 | -------------------------------- | ------------------------------------------------------------------------------------------------------ |
@@ -73,7 +73,7 @@ Visually, the game is stripped to its core elements: clean geometric shapes, sof
 | **Dark Mode**                    | Darker theme with adjusted colors for low-light play.                                                  |
 | **Debug Mode**                   | Add _#debug_ to the URL to disable falling and show performance stats.                                 |
 
-## 📸 Screenshots
+## Screenshots
 
 ![Screenshot](./screenshots/screenshot-02.png)
 
@@ -81,7 +81,7 @@ Visually, the game is stripped to its core elements: clean geometric shapes, sof
 
 ![Screenshot](./screenshots/screenshot-04.png)
 
-## 🤝 Contributing
+## Contributing
 
 Contributions to _ZigZag_ are always welcome and greatly appreciated! Whether you're fixing bugs, adding new features, improving the codebase, or enhancing the documentation, there's always room for improvement. Fork the repository, make your changes, and create a pull request.
 
@@ -120,7 +120,7 @@ We believe in fostering a respectful, open, and collaborative community. Please 
 
 By contributing to _ZigZag_, you help improve the project, and we appreciate your time and effort!
 
-## 💻 Software Used
+## Software Used
 
 The following software tools were utilized in the development of _ZigZag_:
 
@@ -129,7 +129,7 @@ The following software tools were utilized in the development of _ZigZag_:
 - Inkscape
 - Audacity
 
-## 🧪 Testing
+## Testing
 
 _ZigZag_ has been tested across a wide range of platforms, browsers, and devices to ensure optimal performance and compatibility. The goal was to make the game accessible and run smoothly on virtually any device. Notably, it performs well even on older models, such as the 2018 Honor 8X (Android 10, Kirin 710, Mali-G51 MP4, 4GB RAM).
 
@@ -151,7 +151,7 @@ _ZigZag_ has been tested across a wide range of platforms, browsers, and devices
 - Android
 - iOS
 
-## 📜 License
+## License
 
 ![GNU Affero General Public License v3.0 Logo](/public/images/agplv3-200px.png)
 
